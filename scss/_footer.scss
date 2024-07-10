@@ -1,0 +1,257 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+footer
+*************************************************/
+
+footer{
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include c.mq(sm){
+        margin-bottom: 7.5rem;
+    }
+    .inner{
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .footer_wrap{
+            padding-top: 33px;
+            padding-bottom: 55px;
+            display: flex;
+            justify-content: space-between;
+            @media screen and (max-width: 850px) {
+                display: none;
+            }
+            .footerlogo a{
+                display: inline-block;
+                transition: all .3s;
+                width: 169px;
+                height: auto;
+                &:hover{
+                    opacity: .7;
+                }
+            }
+
+            .footer_logo_txt{
+                font-size: 1.8rem;
+                font-weight: 700;
+                padding-top: 1.4rem;
+                letter-spacing: 0;
+            }
+            .address{
+                font-size: 1.5rem;
+                padding-top: 3.4rem;
+            }
+            .tel{
+                font-size: 1.5rem;
+                padding-top: 1rem;
+            }
+            .busi-hours{
+                padding-top: 1rem;
+                font-size: 1.5rem;
+                line-height: 1.5;
+            }
+            .right{
+                display: flex;
+                font-size: 1.5rem;
+                padding-top: 2.7rem;
+                .menu-left{
+                    li{
+                        padding-bottom: 2.7rem;
+                        a{
+                            transition: all .3s;
+                            &:hover{
+                                opacity: .7;
+                            }
+                        }
+                    }
+                    li:last-child{
+                        padding-bottom: 0;
+                    }
+                }
+                .menu-right{
+                    margin-left:  120px;
+                    li{
+                        padding-bottom: 2rem;
+                        a{
+                            transition: all .3s;
+                            &:hover{
+                                opacity: .7;
+                            }
+                        }
+                        .login{
+                            padding-bottom: 2rem;
+                        }
+                        .cart{
+                            padding-bottom: 2.4rem;
+                        }
+                        .official{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    li:last-child{
+                        padding-bottom: 0;
+                    }
+                }
+
+            }
+
+        }
+        .sp_footer_wrap{
+            display: none;
+            @media screen and (max-width: 850px) {
+                display: block;
+            }
+            padding: 3.2rem 0 4rem 0;
+            .footerlogo_wrap{
+                width: 12rem;
+                margin: 0 auto 2rem auto;
+                .f_logo{
+                    .footter_logo_txt{
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        padding-top: .5rem;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+            .footer_nav{
+                display: flex;
+                justify-content: space-around;
+                padding: 2.6rem 0;
+                border-top: 1px solid v.$main;
+                border-bottom: 1px solid v.$main;
+                .nav_left{
+                    li{
+                        padding-bottom: 2rem;
+                        &:last-child{
+                            padding-bottom: 0;
+                        }
+                        a{
+                            transition: all .3s;
+                            font-size:  1.5rem;
+                            font-weight: 500;
+                            letter-spacing: .17em;
+                            @include c.mq(sm){
+                                font-size: 1.3rem;
+                            }
+                            &:hover{
+                                opacity: .7;
+                            }
+                        }
+                    }
+                }
+                .nav_right{
+                    margin-left:  120px;
+                    li{
+                        padding-bottom: 2rem;
+                        &:last-child{
+                            padding-bottom: 0;
+                        }
+                        a{
+                            font-size:  1.5rem;
+                            font-weight: 500;
+                            letter-spacing: .17em;
+                            transition: all .3s;
+                            @include c.mq(sm){
+                                font-size: 1.3rem;
+                            }
+                            &:hover{
+                                opacity: .7;
+                            }
+                        }
+                        .login{
+                            padding-bottom: 2rem;
+                        }
+                        .cart{
+                            padding-bottom: 2.4rem;
+                        }
+                        .official{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    li:last-child{
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            .under_nav{
+                .top ,.bottom{
+                    display: flex;
+                    justify-content: center;
+                    padding-top : 1.3rem;
+                    @include c.mq(sm){
+                        justify-content: left;
+                    }
+                    li{
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        letter-spacing: .17em;
+                        margin-right: 3.2rem;
+                        @include c.mq(sm){
+                            font-size: 1.3rem;
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        a{
+                            transition: all .3s;
+                            &:hover{
+                                opacity: .7;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .info{
+                padding-top: 5.4rem;
+                .address{
+                    font-size: 1.5rem;
+                    @include c.mq(sm){
+                        font-size: 1.3rem;
+                    }
+                }
+                .tel{
+                    font-size: 1.5rem;
+                    padding-top: 1rem;
+                    @include c.mq(sm){
+                        font-size: 1.3rem;
+                    }
+                }
+                .busi-hours{
+                    padding-top: 1.8rem;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                    @include c.mq(sm){
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            
+        }
+        .footer_bottom{
+            padding-bottom: 4rem;
+            text-align: right;
+            @media screen and (max-width: 850px) {
+                text-align: center;
+            }
+            @include c.mq(sm){
+                padding-bottom: 2.1rem;
+            }
+            .copy{
+                font-size: 1.3rem;
+                font-weight: 700;
+                @include c.mq(sm){
+                font-size: .9rem;
+                }
+            }
+        }
+
+    }
+}

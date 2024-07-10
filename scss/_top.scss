@@ -1,0 +1,1617 @@
+@use "variable"as v;
+@use "common"as c;
+
+/*************************************************
+top
+*************************************************/
+
+// .bg-filter {
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     z-index: 0;
+// }
+
+.video-cover {
+    width: 80vw;
+    aspect-ratio: 16 / 9;
+    min-width: 0;
+    position: absolute;
+    top: 0;
+    right: 8rem;
+    z-index: 13;
+    mix-blend-mode: screen;
+    @include c.mq(sm) {
+        width: 90vw;
+        top: 25%;
+        right: 5%;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+    #screen {
+        mix-blend-mode: screen;
+    }
+}
+
+.p-top_mv .swiper-slide-active .swiper-slide__item img,
+.p-top_mv .swiper-slide-duplicate-active .swiper-slide__item img ,
+.p-top_mv .swiper-slide-prev .swiper-slide__item img{
+    animation: zoomUp 10s linear 0s normal both;
+}
+
+.p-top_mv{
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include c.mq(md) {
+        height: 100%;
+    }
+    .mv_inner{
+            max-width: v.pxtovw(1386);
+            height: 100vh;
+            background: url(../images/fv_bg.png) no-repeat top / cover;
+            margin: 3rem auto 0 auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            @include c.mq(sm) {
+                margin: 3rem 2rem 0 2rem;
+                max-height:  850px;
+            }
+        .mv_01{
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%); 
+            width: v.pxtovw(411);
+            height:  v.pxtovw(656);
+            margin: 0 auto;
+            @include c.mq(md) {
+                width: 40%;
+                height:  auto;
+            }
+            @include c.mq(sm) {
+                width: 204px;
+                height:  454px;
+                top: 50%;
+                left: 53%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%); 
+            }
+            .img-pc{
+                @include c.mq(sm) {
+                    display: none;
+                }
+            }
+            .img-sp{
+                display: none;
+                @include c.mq(sm) {
+                    display: block;
+                    
+                }
+            }
+        }
+
+        .illust_r{
+            position: absolute;
+            top: 9%;
+            right: -6%;
+            z-index: 2;
+            width: v.pxtovw(531);
+            height: v.pxtovw(347);
+            @include c.mq(sm){
+                top: initial;
+                right: initial;
+                bottom: -11%;
+                left: -10%;
+                width: 225px;
+                height: 147px;
+            }
+        }
+
+        .illust_l{
+            position: absolute;
+            bottom: -11%;
+            left: -5%;
+            z-index: 2;
+            width: v.pxtovw(562);
+            height: v.pxtovw(367);
+            @include c.mq(sm){
+                display: none;
+            }  
+        }
+
+        .eat{
+            position: absolute;
+            z-index: 10;
+            top: 10%;
+            right: -50px;
+            width: v.pxtovw(822);
+            height: v.pxtovw(628);
+            filter: drop-shadow(10px 10px 40px rgba(0, 0, 0, 0.30));
+            @include c.mq(md) {
+                width: 70%;
+                height:  auto;
+                top: 20%;
+                right: -20rem;
+            }
+            @media screen and (max-width: 768px) {
+                top: 25%;
+                right: -15rem;
+            }
+            @include c.mq(sm) {
+                width: 491px;
+                height: 286px;
+                top: 28%;
+                right: -13rem;
+            }
+            @media screen and (max-width: 400px) {
+                top: 25%;
+                right: -20rem;
+            }
+            img{
+                object-position: left;
+            }
+        }
+
+
+        .dumpling_l{
+            position: absolute;
+            z-index: 4;
+            top: 10%;
+            left: -16%;
+            @media screen and (max-width: 1200px){
+                top: 13%;
+            }
+            @include c.mq(sm) {
+                top: 17%;
+                left: -30%;
+            }
+            .img-box{
+                width: v.pxtovw(668);
+                height: v.pxtovw(668);
+                // border-radius: 999px;
+                // overflow: hidden;
+                @include c.mq(sm) {
+                    width: v.pxtovw_sp(262);
+                    height: v.pxtovw_sp(262);
+                }
+            }
+        
+        }
+
+        .dumpling_r{
+            position: absolute;
+            z-index: 4;
+            top: 70%;
+            right: -13%;
+            @include c.mq(sm) {
+                top: 70%;
+                right: -30%;
+            }
+            .img-box{
+                width: v.pxtovw(668);
+                height: v.pxtovw(668);
+                // border-radius: 999px;
+                // overflow: hidden;
+                @include c.mq(sm) {
+                    width: v.pxtovw_sp(262);
+                    height: v.pxtovw_sp(262);
+                }
+            }
+        }
+        .c-txt{
+            position: absolute;
+            bottom: 13%;
+            left: v.pxtovw(522);
+            font-size: v.pxtovw(26);
+            font-family: "Kaisei Tokumin", serif;
+            color: #603813;
+            letter-spacing: -1.04px;
+            font-weight: 500;
+            @include c.mq(sm) {
+                writing-mode: vertical-rl;
+                font-size: 1.5rem;
+                bottom: 15%;
+                left: 20%;
+            }
+        }
+    }
+}
+
+
+/*************************************************
+about
+*************************************************/
+
+.about{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    padding: 13.5rem 0 22rem 0 ;
+    @include c.mq(sm) {
+        padding: 13.5rem 0 10.4rem 0 ;
+        z-index: 2;
+    }
+    .about_inner{
+        background: url(../images/about_bg.png) no-repeat top /cover;
+        max-width: 940px;
+        margin: 0 auto;
+        border-radius: 10px;
+    
+        .about_content_wrap{
+            padding: 11rem 0;
+            text-align: center;
+            position: relative;
+            @include c.mq(sm) {
+                padding: 4rem 0 8rem 0;
+            }
+            .title_wrap{
+                display: flex;
+                text-align: left;
+                justify-content: center;
+                .vertical_ttl{
+                    -ms-writing-mode: tb-rl;
+                    writing-mode: vertical-rl;
+                    color: #9E1B1F;
+                    font-size: 3.7rem;
+                    font-weight: 700;
+                    font-family: "Kaisei Tokumin", serif;
+                    @include c.mq(sm) {
+                        font-size: 2.8rem;
+                    }
+                }
+                /*========= 1文字ずつ出現させるためのCSS ===============*/
+                .eachTextAnime span{opacity: 0;}
+                .eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+                @keyframes text_anime_on {
+                0% {opacity:0;}
+                100% {opacity:1;}
+                }
+                /*=======ここまで==========*/
+                .vertical_sub{
+                    -ms-writing-mode: tb-rl;
+                    writing-mode: vertical-rl;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    letter-spacing: 2.38px;
+                    @include c.mq(sm) {
+                        font-size: 1.3rem;
+                    }
+                    span{
+                        background: var(--Linear, linear-gradient(90deg, #E5CC79 0%, #B00000 100%));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+
+            .txt{
+                max-width: 570px;
+                margin: 0 auto;
+                padding: 5.2rem 0 5.8rem 0;
+                font-size: 1.6rem;
+                font-weight: 500;
+                text-align: left;
+                @include c.mq(sm) {
+                    padding: 4rem 2rem;
+                    font-size: 1.3rem;
+                }
+            }
+
+            .about_gyoza{
+                position: absolute;
+                bottom: -15rem;
+                left: -25rem;
+                z-index: 7;
+                width: 39rem;
+                height: 39rem;
+                @include c.mq(sm) {
+                    bottom: -20rem;
+                    left: -10rem;
+                    width: 26.2rem;
+                    height: 26.2rem;
+                }
+                
+            }
+        }
+    }
+}
+
+/*************************************************
+recommend
+*************************************************/
+
+.recommend{
+    background: url(../images/bg.png) no-repeat top / cover;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+
+    .recommend_inner{
+        padding-top: 8rem ;
+        padding-bottom: v.pxtovw(230);
+
+        .title_wrap{
+            text-align: center;
+            .sub{
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                span{
+                    background: var(--Linear, linear-gradient(90deg, #E5CC79 0%, #B00000 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                @include c.mq(sm){
+                    font-size: 1.3rem;
+                }
+            }
+            .title{
+                color: v.$red;
+                font-family: "Kaisei Tokumin";
+                font-size: 2.8rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                padding-top: 1.7rem;
+                @include c.mq(sm){
+                    font-size: 2rem;
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        .list_contents{
+            padding-top: 6rem;
+            // 横スクロール設定
+            @media screen and (max-width: 1250px) {
+            // max-width: auto;
+            // overflow-x: scroll;
+            // overflow-x: auto;
+            // -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            padding-bottom: 4rem;
+            width: auto;
+            transform: translateX(-4.0rem);
+            margin-left: 2rem;
+            margin-bottom: 6rem;
+            -ms-overflow-style: none;
+            }
+            @include c.mq(sm) {
+                padding-top: 5rem;
+                padding-bottom: 3rem;
+                transform: translateX(-2.0rem);
+            }
+            // &::-webkit-scrollbar {
+            //     width: 93%;
+            //     height: 6px;
+            // }
+            // &::-webkit-scrollbar-track {
+            //     background: #fff;
+            //     border-radius: 3px;
+            // }
+            // &::-webkit-scrollbar-thumb {
+            //     background: #3F3B3A;
+            //     border-radius: 3px 0 0 3px;
+            // }
+            .simplebar-track.simplebar-horizontal {
+                display: none;
+                @media screen and (max-width: 1250px) {
+                display: block;
+                background: #F9C9A8;
+                border-radius: 5px;
+                width: 100%;
+                height: 6px;
+                margin: 0 auto 0 0;
+                }
+            }
+            .simplebar-scrollbar {
+                display: none;
+                @media screen and (max-width: 1250px) {
+                display: block;
+                background: #3F3B3A;
+                border-radius: 3px 0 0 3px;
+                height: 6px;
+                top: 0;
+                }
+            }
+
+            .list_area{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 35px;
+                // padding: 100px 0;
+                justify-content: space-between;
+                @media screen and (max-width: 1250px){
+                    flex-wrap: nowrap;
+                    gap: 3rem;
+                }
+                li {
+                    // width: calc((100% / 5) - (175px / 5));
+                    margin-bottom: 8rem;
+                    @media screen and (max-width: 1250px){
+                        width: 100vw;
+                        margin-bottom: 2rem;
+                    }
+                    @include c.mq(sm){
+                    // width: 48%;
+                    margin-bottom: 20px;
+                    }
+                    .img_box {
+                        width: 22rem;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        @include c.mq(sm){
+                            width: 22rem;
+                            height: 22rem
+                        }
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                            transition: transform .6s ease; /* ゆっくり変化させる */
+                        }
+                    }
+                    p {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        letter-spacing: .17em;
+                        color: v.$red;
+
+                        @include c.mq(sm){
+                            line-height: 1.3em;
+                        }
+                        &:nth-of-type(1) {
+                            font-size: 1.5rem;
+                        }
+                        &:nth-of-type(2) {
+                            padding-bottom: .5rem;
+                        }
+                        &:nth-of-type(3) {
+                            padding-bottom: 2rem;
+                        }
+                    }
+                    a:hover{
+                        .img_box img{
+                            transform: scale(1.1); /* 拡大 */
+                        }
+                    }
+                    .recommend_btn{
+                        width: 100%;
+                        height: 40px;
+                        font-size: 1.6rem;
+                        @include c.mq(sm){
+                            font-size: 1.4rem;
+                        }
+                        a{
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        background-color: v.$red;
+                        color: #fff;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        border-radius: 100vh;
+                        transition: all .3s;
+                        padding: 7px 10px 7px 23px;
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+        
+                        svg{
+                            width: 25px;
+                            height: auto;
+                            margin-right: 1.3rem;
+                            .cls-1{
+                            transition: all .3s;
+                            }
+                        }
+                        &:hover{
+                        color: #fff;
+                        background-color: #E5CC79;
+                        }
+                        &:hover .cls-1{
+                            fill: #fff;
+                        }
+                        }
+                    }
+                }
+            }
+        }
+        .list_contents::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+.dumpling_big{
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: auto;
+    margin-top: v.pxtovw(-240);
+    .sp_img{
+        display: none;
+    }
+    @include c.mq(sm){
+        .pc_img{
+            display: none;
+        }
+        .sp_img{
+            display: block;
+        }
+    }
+}
+
+.eat_wrap{
+    position: relative;
+    //固定背景
+    &::before{
+        position: fixed;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url(../images/bg_fixd.png) no-repeat center / cover;
+        z-index: -5;
+    }
+    // .eat_inner{
+    //     position: relative;
+    .video-cover02 {
+        width: 80vw;
+        height: auto;
+        position: absolute;
+        top: -20rem;
+        right: 0%;
+        z-index: 11;
+        mix-blend-mode: screen;
+        @media screen and (max-width: 768px) {
+            top: 0;
+            right: -10rem;
+        }
+        @include c.mq(sm) {
+            top: 0;
+            right: 0;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+        #screen {
+            mix-blend-mode: screen;
+        }
+    }
+    .p_eat{
+        position: absolute;
+        z-index: 12;
+        top: -10rem;
+        right: -12rem;
+        width: v.pxtovw(822);
+        height: v.pxtovw(628);
+        filter: drop-shadow(10px 10px 40px rgba(0, 0, 0, 0.30));
+        img{
+            object-position: left;
+        }
+        @media screen and (max-width: 768px) {
+            top: 10rem;
+        }
+        @include c.mq(sm){
+            top: 3rem;
+            right: -19rem;
+            // top: v.pxtovw_sp(40);
+            // right: v.pxtovw(-60);
+            width: v.pxtovw_sp(417);
+            height: v.pxtovw_sp(244);
+        }
+    }
+}
+
+
+.products{
+    position: relative;
+    z-index: 10;
+    margin-top: v.pxtovw(260);
+    width: 100%;
+    padding-bottom: 13rem;
+    @include c.mq(sm){
+        padding-bottom: 10rem;
+    }
+    .product_wrap{
+        position: relative;
+        .products_inner{
+            .title_wrap{
+                .sub{
+                    font-family: "Kaisei Tokumin";
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    letter-spacing: .17em;
+                    @include c.mq(sm){
+                        font-size: 1.3rem;
+                    }
+                    span{
+                        background: linear-gradient(90deg, #E5CC79 0%, #FFF 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+                .p_ttl{
+                    font-family: "Kaisei Tokumin", serif;
+                    color: #fff;
+                    font-size: 3.2rem;
+                    font-weight: 700;
+                    letter-spacing: .17em;
+                    padding-top: 1.7rem;
+                    @include c.mq(sm){
+                        font-size: 2.4rem;
+                        padding-top: 1rem;
+                    }
+                }
+                .p_ttl02{
+                    font-family: "Kaisei Tokumin", serif;
+                    color: #fff;
+                    font-size: 4rem;
+                    font-weight: 700;
+                    margin-top: -1rem;
+                    letter-spacing: .17em;
+                    @include c.mq(sm){
+                        font-size: 2.6rem;
+                    }
+                    .big{
+                        font-size: 6.4rem;
+                        @include c.mq(sm){
+                            font-size: 4rem;
+                        }
+                    }
+                }
+            }
+
+            .product_contents{
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+                .product_list li{
+                    // max-width: 1000px;
+                    max-width: 100%;
+                    margin: 9rem 0 0 auto;
+                    position: relative;
+                    display: block;
+                    &::before{
+                        content: '';
+                        background: url(../images/ryuminmin-gyoza.png) no-repeat center / cover ;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        display: inline-block;
+                        position: absolute;
+                        filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/classic_txt.png) no-repeat center / cover ;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        left: 0;
+                        z-index: 5;
+                        filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    &:first-of-type{
+                        margin-top: 14.5rem;
+                    }
+                    .p_txt_wrap{
+                    background: url(../images/bg.png) no-repeat top / cover;
+                    max-width: 1000px;
+                    padding: 7rem 16rem 7rem 29rem;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+                    position: relative;
+                    margin : 0 0 0 auto;
+                    @media screen and (max-width: 1250px){
+                        padding: 7rem 5rem 7rem 40rem;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        padding: 5rem 5rem 5rem 45rem;
+                    }
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .p_txt{
+                            position: relative;
+                            z-index: 3;
+                            h4{
+                                font-family: "Kaisei Tokumin";
+                                font-size: 2rem;
+                                font-weight: 700;
+                                letter-spacing: .17em;
+                                color: #730D15;
+                            }
+                            h3{
+                                color: v.$red;
+                                font-family: "Kaisei Tokumin";
+                                font-size: 3.6rem;
+                                font-weight: 700;
+                                letter-spacing: .17em;
+                            }
+                            p{
+                                font-weight: 700;
+                                font-size: 1.6rem;
+                                line-height: 1.688;
+                                padding-bottom: 4rem;
+                            }
+                        
+                            .btn_wrap_side{
+                                display: flex;
+                                @media screen and (max-width: 1100px) {
+                                    flex-direction: column;
+                                    gap: 2rem;
+                                }
+                                .btn_wrap{
+                                    margin-left: 0;
+                                    .space{
+                                        letter-spacing: 0;
+                                        padding: .9rem 4rem .9rem 2rem;
+                                    }
+                                        
+                                    a.btn:hover {
+                                    transform: translateY(5px);
+                                    box-shadow: none;
+                                    color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .product_list .second{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        background: url(../images/goya-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        right: 0;
+                        left:  initial;
+                        top: 50%;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/goya_txt.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        right: 0;
+                        left:  initial;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        margin: 0 auto 0 0;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .khaki {
+                            color: #334D05
+                        }
+                    }
+                }
+
+                .product_list .third{
+                    &::before{
+                        content: '';
+                        background: url(../images/mozuku-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/mozuku_txt.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        left: 0;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .brown {
+                            color: #733E01;
+                        }
+                    }
+                }
+
+                .product_list .fourth{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        background:  url(../images/ikasumi-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        right: 0;
+                        left:  initial;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/ikasumi_txt.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        right: 0;
+                        left:  initial;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        margin: 0 auto 0 0;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .navy {
+                            color: #3B404F;
+                        }
+                    }
+                }
+
+                .product_list .fifth{
+                    &::before{
+                        content: '';
+                        background: url(../images/ninniku-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/shiso-txt.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        left: 0;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .purple {
+                            color: #40114A;
+                        }
+                    }
+                }
+
+                .product_list .sixth{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        background: url(../images/agu-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        right: 0;
+                        left:  initial;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/agu_txt.png)  no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        right: 0;
+                        left:  initial;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        margin: 0 auto 0 0;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .dark-brown {
+                            color: #531304;
+                        }
+                    }
+                }
+
+                
+                .product_list .seventh{
+                    &::before{
+                        content: '';
+                        background: url(../images/tougarashi-gyoza.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 44.8rem;
+                        height: 44.8rem;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 4;
+                        @media screen and (max-width: 1100px) {
+                            width: 40rem;
+                            height: 40rem;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../images/umakara_txt.png) no-repeat top / cover;
+                        position: absolute;
+                        width: 12.6rem;
+                        height: 12.6rem;
+                        top: -10%;
+                        left: 0;
+                        z-index: 5;
+                        @media screen and (max-width: 1100px) {
+                            top: 0;
+                        }
+                    }
+                    .p_txt_wrap{
+                        position: relative;
+                        .product_img{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        .dark-brown {
+                            color: #531304;
+                        }
+                    }
+                }
+
+                .product_list .reverse{
+                    margin: 9rem auto 0 0;
+                    position: relative;
+                    .p_txt_wrap{
+                        background: url(../images/bg.png) no-repeat top / cover;
+                        padding: 7rem 29rem 7rem 16rem;
+                        @media screen and (max-width: 1250px) {
+                            padding: 7rem 40rem 7rem 5rem;
+                        }
+                        @media screen and (max-width: 1100px) {
+                            padding: 5rem 45rem 5rem 5rem;
+                        }
+                    }
+                }
+            
+            }
+
+            //スマホ用デザイン
+            .product_contents_sp{
+                display: none;
+                @media screen and (max-width: 768px) {
+                    display: block;
+                    padding-top: 14rem;
+                    // 横スクロール設定
+                    width: 102%;
+                    transform: translateX(-4.0rem);
+                    margin-left: 4rem;
+                }           
+                .simplebar-track.simplebar-horizontal {
+                    background: #fff;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 6px;
+                    margin: 0 auto 0 0;
+                }
+                .simplebar-scrollbar {
+                    background: #939393;
+                    border-radius: 3px 0 0 3px;
+                    height: 6px;
+                    top: 0;
+                }
+    
+                .producr_item{
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 35px;
+                    // padding: 100px 0;
+                    justify-content: space-between;
+                    @include c.mq(sm){
+                        gap: 3rem;
+                    }
+                    .long{
+                        width: 30rem;
+                        height: 58.1rem;
+                    }
+                    li {
+                        width: 30rem;
+                        height: 56.1rem;
+                        margin-bottom: 3rem;
+                        @include c.mq(sm){
+                        // width: 48%;
+                        }
+                        .p-contents_inner{
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            border-radius:  1rem;
+                            overflow: hidden;
+                            .chum-box {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 30rem;
+                                height: 25rem;
+                                img {
+                                    width: 100%;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    transition: transform .6s ease; /* ゆっくり変化させる */
+                                }
+                            }
+                            .p_txt_wrap{
+                                background: url(../images/bg.png) no-repeat top / cover;
+                                padding: 26.5rem 1.5rem;
+                                width: 30rem;
+                                height: 56.1rem;
+                                // border-radius: 0 0 1rem 1rem;
+                                // overflow: hidden;
+                                .product_img{
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 0;
+                                }
+                                .p_txt{
+                                    position: relative;
+                                    h4{
+                                        font-size:  1.4rem;
+                                        color: #730D15;
+                                        font-weight: 700;
+                                        letter-spacing: 0;
+                                    }
+                                    .agu_heading{
+                                        font-size:  1.3rem;
+                                        letter-spacing: -.1em;
+                                    }
+                                    h3{
+                                        color: v.$red;
+                                        font-family: "Kaisei Tokumin";
+                                        font-size: 2rem;
+                                        font-weight: 700;
+                                        letter-spacing: .17em;
+                                        padding-top:  .6rem;
+                                    }
+                                    p{
+                                        font-weight: 700;
+                                        font-size: 1.3rem;
+                                        line-height: 1.688;
+                                        padding-top:  1rem;
+                                        padding-bottom: 1.7rem;
+                                    }
+                                    .mozuku_text{
+                                        padding-bottom: 4rem;
+                                    }
+                                    .btn_wrap_side{
+                                        .btn_wrap{
+                                            margin-bottom: 2rem;
+                                            a{
+                                                font-size: 1.6rem;
+                                            }
+                                            .space{
+                                                letter-spacing: 0;
+                                                padding: .9rem 4rem .9rem 2rem;
+                                            }
+                                        }
+                                        .btn_wrap:nth-child(2){
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            .long_txt_wrap{
+                                width: 30rem;
+                                height: 58.1rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+.category{
+    background: url(../images/bg.png) no-repeat top / cover;
+    padding: 8rem 0 6.5rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    @include c.mq(sm){
+        padding: 4.2rem 0 12.2rem 0;
+    }
+    .category_inner{
+        .title_wrap{
+            text-align: center;
+            .sub{
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                @include c.mq(sm){
+                    font-size: 1.3rem;
+                }
+                span{
+                    background: var(--Linear, linear-gradient(90deg, #E5CC79 0%, #B00000 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .title{
+                color: v.$red;
+                font-family: "Kaisei Tokumin", serif;
+                font-size: 2.8rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                padding-top: 1.7rem;
+                @include c.mq(sm){
+                    font-size: 2rem;
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        .list_item{
+            display: flex;
+            gap: 3.6rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 4.6rem ;
+            padding-bottom: 5rem; 
+            @include c.mq(sm){
+                gap: 1rem;
+                padding-top: 3.2rem ;
+                padding-bottom: 3rem;
+            }
+            &::after{
+                content:"";
+                display: block;
+                width:30%;
+            }
+
+            li { 
+                width: calc((100% / 3) - (95px / 3));
+                @media screen and (max-width: 768px) {
+                    width: calc((100% / 2) - (60px / 2));
+                }
+                @include c.mq(sm){
+                    width: calc((100% / 2) - (20px / 2));
+                    height: 18rem;
+                    margin-bottom: 1rem;
+                }
+                .category_list{
+                    display: flex;
+                    max-width: 39rem;
+                    height: 10.7rem;
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+                    background-color: #fff;
+                    border-radius:  10px;
+                    align-items: center;
+                    transition: all .3s;
+                    @include c.mq(sm){
+                        flex-direction: column;
+                        height: 18.1rem;
+                    }
+                    .card_img{
+                        width: 11rem;
+                        height: 11rem;
+                        border-radius:  10px 0 0 10px;
+                        overflow: hidden;
+                        @include c.mq(sm){
+                            width: 100%;
+                            height: 15rem;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: 10px 0 0 10px;
+                            transition: transform .6s ease; /* ゆっくり変化させる */
+                            @include c.mq(sm){
+                                border-radius: 1rem 1rem 0 0;
+                            }
+                            }
+                        }
+                    
+                    .cate_text{
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                        margin-left: 3.2rem;
+                        letter-spacing: .17em;
+                        padding-bottom: initial;
+                        @include c.mq(sm){
+                            margin-left: initial;
+                            font-size: 1.4rem;
+                            padding: .6rem 0;
+                        }
+                    }
+                    .two_lines{
+                        text-align: left;
+                        line-height: 1.5;
+                    }   
+                    &:hover{
+                        .card_img img{
+                            transform: scale(1.1); /* 拡大 */
+                        }
+                        .cate_text{
+                            opacity: .7;
+                        }
+                    }                
+                }
+            }
+        }
+        .btn_arrow03 {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.bake{
+    position: relative;
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 11.8rem;
+    z-index: 6;
+    @include c.mq(sm){
+        padding-top: 6.4rem;
+        padding-bottom: 13.2rem;
+    }
+    .bake_wrap{
+    position: relative;
+        &::before{
+            position: absolute;
+            top: -20rem;
+            left: -6rem;
+            content:'';
+            background: url(../images/bg_illust_l.png) no-repeat center / cover;
+            width: 50.4rem;
+            height: 33rem;
+            z-index: 7;
+            @include c.mq(md){
+                width: 39.8rem;
+                height: 26rem;
+            }
+            @include c.mq(md){
+                width: 22.5rem;
+                height: 14.7rem;
+                top: -16rem;
+                left: -4rem;
+            }
+        }
+        &::after{
+            position: absolute;
+            bottom: -20rem;
+            right: -6rem;
+            content: '';
+            background: url(../images/bg_illust_r.png) no-repeat center / cover;
+            width: 50.4rem;
+            height: 33rem;
+            z-index: 7;
+            @include c.mq(md){
+                width: 39.8rem;
+                height: 26rem;
+            }
+            @include c.mq(md){
+                width: 22.5rem;
+                height: 14.7rem;
+                bottom: -8rem;
+                right: -4rem;
+            }
+        }
+
+        .bake_inner{
+            max-width: 95rem;
+            height: 20.6rem;
+            margin: 0 auto;
+            background: url(../images/bake.jpg) no-repeat top / cover;
+            padding-top: 7.2rem;
+            overflow: hidden;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+            @media screen and (max-width: 950px) {
+                margin: 0 2rem;
+            }
+            @include c.mq(sm){
+                background: url(../images/bake_sp.jpg) no-repeat top / cover;
+                height: 24.2rem;
+                padding-top: 9.2rem;
+            }
+
+            .bake_btn_wrap{
+                display: flex;
+                align-items: center;
+                padding-right: 1.6rem;
+                text-align: center;
+                width: 37.3rem;
+                height: 7.1rem;
+                margin: 0 auto;
+                transition: all .2s;
+                background: var(--Linear, linear-gradient(90deg, #E5CC79 0%, #B00000 100%));
+                border-radius: 99.9rem;
+                &:hover{
+                    background: #fff;
+                }
+                @include c.mq(sm){
+                    width: 31rem;
+                    height: 5.9rem;
+                }
+                a{
+                    padding: 1.5rem 5rem;
+                    display: inline-block;
+                    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    color: #fff;
+                    font-family: "Kaisei Tokumin", serif;
+                    letter-spacing: .17rem;
+                    position: relative;
+                    @include c.mq(sm){
+                        font-size: 1.8rem;
+                        padding: 1rem 4rem;
+                    }
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        width: 3.3rem;
+                        height: 3.3rem;
+                        margin-left: 2rem;
+                        background: url(../images/arrow_white.svg)  no-repeat center / cover;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        @include c.mq(sm){
+                            width: 3.1rem;
+                            height: 3.1rem;
+                            margin-left: 1.5rem;
+                        }
+                    }
+                }
+                &:hover a{
+                    color : v.$red;
+                    text-shadow:none;
+                }
+                &:hover a::after{
+                    background: url(../images/arrow.svg);
+                }
+            }
+        }
+
+    }
+}
+
+.faq{
+    position: relative;
+    width: 100%;
+    background: url(../images/bg.png) no-repeat top / cover;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    @include c.mq(sm){
+        padding-top: 4.3rem;
+        padding-bottom: 2.3rem;
+    }
+    &::after{
+        position: absolute;
+        content:'';
+        background: url(../images/faq.jpg) no-repeat center / cover;
+        mix-blend-mode: multiply;
+        opacity: .3;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+    }
+    .inner{
+        .title_wrap{
+            text-align: center;
+            .sub{
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                @include c.mq(sm){
+                    font-size: 1.3rem;
+                }
+                span{
+                    background: var(--Linear, linear-gradient(90deg, #E5CC79 0%, #B00000 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .title{
+                color: v.$red;
+                font-family: "Kaisei Tokumin", serif;
+                font-size: 2.8rem;
+                font-weight: 700;
+                letter-spacing: .17em;
+                padding-top: 1.7rem;
+                @include c.mq(sm){
+                    font-size: 2rem;
+                    padding-top: 1rem;
+                }
+            }
+        }
+        .link_item{
+            display: flex;
+            // gap: 39px;
+            justify-content: space-between;
+            padding-top: 5.4rem;
+            position: relative;
+            z-index: 3;
+            @media screen and (max-width: 768px) {
+                display: block;   
+            }
+            @include c.mq(sm){
+                padding-top: 1.6rem;
+            }
+            li {
+                width: calc((100% / 3) - (95px / 3));
+                @include c.mq(md){
+                    width: calc((100% / 3) - (40px / 3));
+                }
+                @media screen and (max-width: 768px) {
+                    max-width: 50rem;
+                    width: 100%;
+                    margin: 0 auto 2rem auto;
+                }
+                @include c.mq(sm){
+                    width: 100%;
+                    // padding-top: 20px;
+                }
+                .link_list{
+                    display: flex;
+                    max-width: 37.7rem;
+                    height: 10.7rem;
+                    box-shadow: 5px 5px 11.5px 0px rgba(0, 0, 0, 0.10) inset;
+                    background-color: #fff;
+                    border-radius:  1rem;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .3s;
+                    &:hover{
+                        opacity: .8;
+                    }
+                    @media screen and (max-width: 768px) {
+                        max-width: 50rem;
+                    }
+                    @include c.mq(sm){
+                        height: 8rem
+                    }
+                    .link_text_wrap{
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 3.8rem;
+                            height: auto;
+                            @include c.mq(md){
+                                width: 3.5rem;
+                                height: auto;
+                            }
+                        }
+                        .link_text{
+                            font-size: 1.8rem;
+                            padding-bottom: initial;
+                            padding:  0 1.5rem;
+                            // position: relative;
+                            @media screen and (max-width: 1100px) {
+                                font-size: 1.6rem;
+                                padding:  0 .8rem;
+                            }
+                            @media screen and (max-width: 768px) {
+                                padding:  0 2.5rem;
+                            }
+                            .tb{
+                                display: none;
+                                @include c.mq(md){
+                                    display: block;
+                                }
+                                @media screen and (max-width: 768px) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+        

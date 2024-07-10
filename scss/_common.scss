@@ -1,0 +1,190 @@
+@use "variable"as v;
+
+/*************************************************
+common-style
+*************************************************/
+@mixin base_width{
+  margin: 0 auto;
+  width: 1200px;
+}
+// @extendでスタイルの継承
+// @mixinでステイルの定義
+// @includeでmixinの呼び出し
+
+// ブレイクポイント
+// PC基準でコーディングする場合
+$breakpoints: (
+  "sm": "screen and (max-width: 599px)", //スマホ
+  "md": "screen and (max-width: 1024px)", //タブレット
+) !default;
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints , $breakpoint)} {
+    @content;
+  }
+}
+
+// スマホ基準でコーディングする場合
+// $breakpoints: (
+//   "md": "screen and (min-width: 600px)", //タブレット
+//   "lg": "screen and (min-width: 1025px)", //パソコン
+// ) !default;
+// @mixin mq($breakpoint: lg) {
+//   @media #{map-get($breakpoints , $breakpoint)} {
+//     @content;
+//   }
+// }
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  scroll-behavior: smooth;
+  font-family: "Zen Old Mincho",'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  // font-family: "Kaisei Tokumin", serif;
+  color: #000101;
+  line-height: 1.7;
+  letter-spacing: .17em;
+}
+
+main{
+  overflow: hidden;
+}
+
+.img-box {
+  img {
+    width: 100%;
+  }
+}
+
+.obj-fit {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
+// /iOSでのデフォルトスタイルをリセット /
+input[type="submit"],
+input[type="button"] {
+border-radius: 0;
+-webkit-box-sizing: content-box;
+-webkit-appearance: button;
+appearance: button;
+border: none;
+box-sizing: border-box;
+&::-webkit-search-decoration {
+display: none;
+}
+&:focus {
+outline-offset: -2px;
+}
+}
+
+.filter_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg_fixd.png) no-repeat center / cover;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.inner_s{
+  max-width: 940px;
+  margin: 0 auto;
+  @media screen and (max-width: 1250px){
+    width: 92%;
+  }
+}
+
+.inner{
+  max-width: 1240px;
+  margin: 0 auto;
+  @media screen and (max-width: 1250px){
+    width: 92%;
+  }
+}
+
+.btn_wrap{
+  display: flex;
+  align-items: center;
+  // justify-content: right;
+  // padding-right: 1rem;
+  justify-content: center;
+  width: 26rem;
+  height: 5rem;
+  margin: 0 auto;
+  border: 1px solid v.$red;
+  color: v.$red;
+  background: #fff;
+  border-radius: 99.9rem;
+  position: relative;
+  transition: all .3s;
+  &:hover{
+    border: 1px solid #E5CC79;
+    background-color: #E5CC79;
+    color: #fff;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    background: url(../images/arrow.svg) no-repeat center / cover;
+    width: 3.3rem;
+    height: 3.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+  &:hover::after {
+    background: url(../images/arrow_white_hover.svg) no-repeat center / cover;
+  }
+  a{
+      padding: .9rem 5rem;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: .17rem;
+      .btn_arrow {
+          width: 3.3rem;
+          margin-left: 2rem;
+      }
+  }
+}
+
+
+// フェードインアニメ
+.scroll {
+  opacity:0;
+}
+
+.active{
+  animation-name: fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  }
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+}
