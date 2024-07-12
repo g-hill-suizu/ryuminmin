@@ -113,7 +113,7 @@ input[type=button]:focus {
 .btn_wrap::after {
   position: absolute;
   content: "";
-  background: url(../images/arrow.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg) no-repeat center/cover;
   width: 3.3rem;
   height: 3.3rem;
   top: 50%;
@@ -121,7 +121,7 @@ input[type=button]:focus {
   right: 1rem;
 }
 .btn_wrap:hover::after {
-  background: url(../images/arrow_white_hover.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow_white_hover.svg) no-repeat center/cover;
 }
 .btn_wrap a {
   padding: 0.9rem 5rem;
@@ -626,7 +626,7 @@ spメニューレイアウト
   transform: translateY(-50%);
   width: 1.3rem;
   height: 1.2rem;
-  background: url(../images/icon-links.svg) no-repeat center/contain;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/icon-links.svg) no-repeat center/contain;
 }
 .open_active .sp_header_inner a:hover {
   opacity: 0.7;
@@ -651,7 +651,7 @@ spメニューレイアウト
 footer
 *************************************************/
 footer {
-  background-image: url(../images/bg.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -963,7 +963,7 @@ top
 .p-top_mv .mv_inner {
   max-width: 96.25vw;
   height: 100vh;
-  background: url(../images/fv_bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/fv_bg.png) no-repeat top/cover;
   margin: 3rem auto 0 auto;
   border-radius: 1rem;
   overflow: hidden;
@@ -1173,7 +1173,7 @@ about
   }
 }
 .about .about_inner {
-  background: url(../images/about_bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/about_bg.png) no-repeat top/cover;
   max-width: 940px;
   margin: 0 auto;
   border-radius: 10px;
@@ -1273,7 +1273,7 @@ about
 recommend
 *************************************************/
 .recommend {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   width: 100%;
   height: auto;
   position: relative;
@@ -1502,7 +1502,7 @@ recommend
   content: "";
   width: 100%;
   height: 100%;
-  background: url(../images/bg_fixd.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png) no-repeat center/cover;
   z-index: -5;
 }
 .eat_wrap .video-cover02 {
@@ -1644,7 +1644,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list li::before {
   content: "";
-  background: url(../images/ryuminmin-gyoza.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/ryuminmin-gyoza.png) no-repeat center/cover;
   width: 44.8rem;
   height: 44.8rem;
   display: inline-block;
@@ -1663,7 +1663,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list li::after {
   content: "";
-  background: url(../images/classic_txt.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/classic_txt.png) no-repeat center/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1681,7 +1681,7 @@ recommend
   margin-top: 14.5rem;
 }
 .products .product_wrap .products_inner .product_contents .product_list li .p_txt_wrap {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   max-width: 1000px;
   padding: 7rem 16rem 7rem 29rem;
   border-radius: 10px;
@@ -1755,7 +1755,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .second::before {
   content: "";
-  background: url(../images/goya-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/goya-gyoza.png) no-repeat top/cover;
   position: absolute;
   right: 0;
   left: initial;
@@ -1773,7 +1773,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .second::after {
   content: "";
-  background: url(../images/goya_txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/goya_txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1801,7 +1801,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .third::before {
   content: "";
-  background: url(../images/mozuku-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/mozuku-gyoza.png) no-repeat top/cover;
   position: absolute;
   left: 0;
   top: 50%;
@@ -1818,7 +1818,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .third::after {
   content: "";
-  background: url(../images/mozuku_txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/mozuku_txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1847,7 +1847,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .fourth::before {
   content: "";
-  background: url(../images/ikasumi-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/ikasumi-gyoza.png) no-repeat top/cover;
   position: absolute;
   width: 44.8rem;
   height: 44.8rem;
@@ -1865,7 +1865,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .fourth::after {
   content: "";
-  background: url(../images/ikasumi_txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/ikasumi_txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1893,7 +1893,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .fifth::before {
   content: "";
-  background: url(../images/ninniku-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/ninniku-gyoza.png) no-repeat top/cover;
   position: absolute;
   width: 44.8rem;
   height: 44.8rem;
@@ -1910,7 +1910,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .fifth::after {
   content: "";
-  background: url(../images/shiso-txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/shiso-txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1939,7 +1939,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .sixth::before {
   content: "";
-  background: url(../images/agu-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/agu-gyoza.png) no-repeat top/cover;
   position: absolute;
   width: 44.8rem;
   height: 44.8rem;
@@ -1957,7 +1957,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .sixth::after {
   content: "";
-  background: url(../images/agu_txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/agu_txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -1985,7 +1985,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .seventh::before {
   content: "";
-  background: url(../images/tougarashi-gyoza.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/tougarashi-gyoza.png) no-repeat top/cover;
   position: absolute;
   width: 44.8rem;
   height: 44.8rem;
@@ -2002,7 +2002,7 @@ recommend
 }
 .products .product_wrap .products_inner .product_contents .product_list .seventh::after {
   content: "";
-  background: url(../images/umakara_txt.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/umakara_txt.png) no-repeat top/cover;
   position: absolute;
   width: 12.6rem;
   height: 12.6rem;
@@ -2031,7 +2031,7 @@ recommend
   position: relative;
 }
 .products .product_wrap .products_inner .product_contents .product_list .reverse .p_txt_wrap {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding: 7rem 29rem 7rem 16rem;
 }
 @media screen and (max-width: 1250px) {
@@ -2112,7 +2112,7 @@ recommend
   transition: transform 0.6s ease; /* ゆっくり変化させる */
 }
 .products .product_wrap .products_inner .product_contents_sp .producr_item li .p-contents_inner .p_txt_wrap {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding: 26.5rem 1.5rem;
   width: 30rem;
   height: 56.1rem;
@@ -2172,7 +2172,7 @@ recommend
 }
 
 .category {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding: 8rem 0 6.5rem 0;
   width: 100%;
   position: relative;
@@ -2343,7 +2343,7 @@ recommend
   top: -20rem;
   left: -6rem;
   content: "";
-  background: url(../images/bg_illust_l.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_illust_l.png) no-repeat center/cover;
   width: 50.4rem;
   height: 33rem;
   z-index: 7;
@@ -2367,7 +2367,7 @@ recommend
   bottom: -20rem;
   right: -6rem;
   content: "";
-  background: url(../images/bg_illust_r.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_illust_r.png) no-repeat center/cover;
   width: 50.4rem;
   height: 33rem;
   z-index: 7;
@@ -2390,7 +2390,7 @@ recommend
   max-width: 95rem;
   height: 20.6rem;
   margin: 0 auto;
-  background: url(../images/bake.jpg) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bake.jpg) no-repeat top/cover;
   padding-top: 7.2rem;
   overflow: hidden;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -2402,7 +2402,7 @@ recommend
 }
 @media screen and (max-width: 599px) {
   .bake .bake_wrap .bake_inner {
-    background: url(../images/bake_sp.jpg) no-repeat top/cover;
+    background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bake_sp.jpg) no-repeat top/cover;
     height: 24.2rem;
     padding-top: 9.2rem;
   }
@@ -2451,7 +2451,7 @@ recommend
   width: 3.3rem;
   height: 3.3rem;
   margin-left: 2rem;
-  background: url(../images/arrow_white.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow_white.svg) no-repeat center/cover;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -2467,13 +2467,13 @@ recommend
   text-shadow: none;
 }
 .bake .bake_wrap .bake_inner .bake_btn_wrap:hover a::after {
-  background: url(../images/arrow.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg);
 }
 
 .faq {
   position: relative;
   width: 100%;
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
 }
@@ -2486,7 +2486,7 @@ recommend
 .faq::after {
   position: absolute;
   content: "";
-  background: url(../images/faq.jpg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/faq.jpg) no-repeat center/cover;
   mix-blend-mode: multiply;
   opacity: 0.3;
   width: 100%;
@@ -2733,7 +2733,7 @@ about
 }
 .about_mv .fv_text {
   max-width: 1386px;
-  background-image: url(../images/about_mv_bg.jpg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/about_mv_bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2806,7 +2806,7 @@ about
 .about_mv .fv_text .text_inner .intro_title_wrap ::before {
   position: absolute;
   content: "";
-  background: url(../images/bar.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2818,7 +2818,7 @@ about
 .about_mv .fv_text .text_inner .intro_title_wrap ::after {
   position: absolute;
   content: "";
-  background: url(../images/bar.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3010,7 +3010,7 @@ about
   transition: transform 0.6s ease; /* ゆっくり変化させる */
 }
 .about_lineup .myswiper_wrapper .swiper-container .swiper-slide .item_wrap_sp .p-contents_inner .p_txt_wrap {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding: 26.5rem 1.5rem;
   width: 30rem;
   height: 56.1rem;
@@ -3097,7 +3097,7 @@ about
 .history {
   z-index: 5;
   position: relative;
-  background-image: url(../images/bg.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3304,7 +3304,7 @@ about
   max-width: 1226px;
   margin: 12rem auto;
   padding: 5.8rem 0 7.8rem 0;
-  background-image: url(../images/bg.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3355,7 +3355,7 @@ about
   width: 100%;
   height: 6%;
   content: "";
-  background: url(../images/bar.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3367,7 +3367,7 @@ about
   width: 100%;
   height: 6%;
   content: "";
-  background: url(../images/bar.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3379,7 +3379,7 @@ about
   justify-content: space-around;
   gap: 4.8rem;
   flex-wrap: wrap;
-  background-image: url(../images/bg.png);
+  background-image: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3441,7 +3441,7 @@ about
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/step1.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3461,7 +3461,7 @@ about
   position: absolute;
   top: 27%;
   right: -10%;
-  background: url(../images/step_arrow.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step_arrow.svg);
   width: 1.8rem;
   height: 3rem;
   background-size: contain;
@@ -3485,7 +3485,7 @@ about
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/step2.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3505,7 +3505,7 @@ about
   position: absolute;
   top: 27%;
   right: -10%;
-  background: url(../images/step_arrow.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step_arrow.svg);
   width: 1.8rem;
   height: 3rem;
   background-size: contain;
@@ -3529,7 +3529,7 @@ about
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/step3.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step3.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3550,7 +3550,7 @@ about
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/step4.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step4.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3570,7 +3570,7 @@ about
   position: absolute;
   top: 27%;
   right: -10%;
-  background: url(../images/step_arrow.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step_arrow.svg);
   width: 1.8rem;
   height: 3rem;
   background-size: contain;
@@ -3594,7 +3594,7 @@ about
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/step5.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/step5.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3645,7 +3645,7 @@ company / terms
   position: relative;
   z-index: 2;
   max-width: 1240px;
-  background: url(../images/underpage_bg.jpg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/underpage_bg.jpg) no-repeat center/cover;
   margin: 10rem auto 17rem auto;
   border-radius: 1rem;
   overflow: hidden;
@@ -3775,14 +3775,14 @@ privacy policy
   bottom: 0;
   left: 0;
   content: "";
-  background: url(../images/bar_02.svg) no-repeat center;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar_02.svg) no-repeat center;
   width: 100%;
   height: 6px;
   background-size: 100%;
 }
 @media screen and (max-width: 599px) {
   .pp_text_wrap .heading h4::after {
-    background: url(../images/bar_sp.svg) no-repeat center;
+    background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bar_sp.svg) no-repeat center;
     background-size: 100%;
   }
 }
@@ -3807,7 +3807,7 @@ faq
   position: relative;
   z-index: 2;
   margin-top: 8rem;
-  background: url(../images/bg.png);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3839,7 +3839,7 @@ faq
   padding: 6.5rem 2rem 10rem 2rem;
   max-width: 1140px;
   margin: 10rem auto 17rem auto;
-  background: url(../images/underpage_bg.jpg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/underpage_bg.jpg) no-repeat center/cover;
   border-radius: 1rem;
   overflow: hidden;
   /* is-openedクラスが付与されたときのスタイル */
@@ -3917,7 +3917,7 @@ faq
 .faqpage_wrap .faq_wrap summary::before {
   position: absolute;
   content: "";
-  background: url(../images/q_icon.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/q_icon.svg);
   width: 4.2rem;
   height: 4.2rem;
   top: 50%;
@@ -3932,7 +3932,7 @@ faq
 .faqpage_wrap .faq_wrap summary::after {
   position: absolute;
   content: "";
-  background: url(../images/faq_arrow.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/faq_arrow.svg) no-repeat center/cover;
   width: 2rem;
   height: 1.2rem;
   top: 50%;
@@ -4099,7 +4099,7 @@ contact
 .tel_wrap .number_wrap .namber::before {
   position: absolute;
   content: "";
-  background: url(../images/tel_icon.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/tel_icon.svg) no-repeat center/cover;
   width: 3.5rem;
   height: 3.5rem;
   top: 50%;
@@ -4115,7 +4115,7 @@ contact
 .tel_wrap .number_wrap .namber::after {
   position: absolute;
   content: "";
-  background: url(../images/arrow.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg) no-repeat center/cover;
   width: 3.3rem;
   height: 3.3rem;
   top: 50%;
@@ -4301,7 +4301,7 @@ contact
 .underpage_wrap .form_wrap form .contact_btn::after {
   position: absolute;
   content: "";
-  background: url(../images/arrow.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg) no-repeat center/cover;
   width: 3.3rem;
   height: 3.3rem;
   top: 50%;
@@ -4309,7 +4309,7 @@ contact
   right: 1rem;
 }
 .underpage_wrap .form_wrap form .contact_btn:hover::after {
-  background: url(../images/arrow_white.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow_white.svg) no-repeat center/cover;
 }
 .underpage_wrap .form_wrap form .contact_btn button {
   width: 100%;
@@ -4322,7 +4322,7 @@ contact
 products
 *************************************************/
 .c-page_wrap {
-  background: url(../images/bg.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat top/cover;
   padding: 8rem 0 6.5rem 0;
   width: 100%;
   position: relative;
@@ -4668,7 +4668,7 @@ products
 .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn::after {
   position: absolute;
   content: "";
-  background: url(../images/cart_icon.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon.svg) no-repeat center/cover;
   width: 2.5rem;
   height: 2.5rem;
   top: 50%;
@@ -4683,7 +4683,7 @@ products
   }
 }
 .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn:hover::after {
-  background: url(../images/cart_icon_white.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_white.svg) no-repeat center/cover;
 }
 .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn a {
   padding: 0.6rem 0 0.6rem 2rem;
@@ -4974,7 +4974,7 @@ products-detail
 .p-merchandise__detail-content .c-btn::before {
   position: absolute;
   content: "";
-  background: url(../images/cart_icon_detail.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_detail.svg) no-repeat center/cover;
   width: 2.3rem;
   height: 2.3rem;
   top: 50%;
@@ -5000,7 +5000,7 @@ products-detail
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .p-merchandise__detail-content .c-btn:hover::before {
-  background: url(../images/cart_icon.svg) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon.svg) no-repeat center/cover;
 }
 .p-merchandise__detail-content .product-quantity {
   width: 16.8rem;
@@ -5160,7 +5160,7 @@ products-detail
 .p-recommend {
   position: relative;
   z-index: 2;
-  background: url(../images/bg.png) no-repeat center/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg.png) no-repeat center/cover;
   padding: 5rem 0;
   margin-bottom: 12rem;
 }
@@ -5339,7 +5339,7 @@ products-detail
 .p-recommend .underpage_inner .list_contents .list_area li .cart_btn::after {
   position: absolute;
   content: "";
-  background: url(../images/cart_icon_white.svg);
+  background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_white.svg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
