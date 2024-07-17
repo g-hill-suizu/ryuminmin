@@ -91,7 +91,7 @@
             <!-- <p>全4件</p> -->
             <p>並び順：</p>
             {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                <select name="display_order">
+                <select name="sort_by" id="SortBy" aria-describedby="a11y-refresh-page-message">
                     <option value="manual" {% if sort_by == "manual" %}selected{% endif %}>おすすめ</option>
                     <option value="created-descending" {% if sort_by == "created-descending" %}selected{% endif %}>新着順</option>
                     <option value="price-ascending" {% if sort_by == "price-ascending" %}selected{% endif %}>価格が安い順</option>
@@ -112,343 +112,15 @@
                     <p class="price">{{ product.price | money }}</p>
                 </a>
                 <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
+                    <button type="button" class="cart"  data-product-id="{{ product.variants.first.id }}">カートに入れる</button>
                 </div>
             </div><!-- /.item-card -->
-
-            {% comment %} <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card -->
-
-            <div class="item-card02">
-                <a href="products-detail.html">
-                    <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/product_dammy.jpg" alt=""></div>
-                    <p class="cate">カテゴリ名</p>
-                    <p class="item-name">商品名</p>
-                    <p class="price">0,000円(税込)</p>
-                </a>
-                <div class="cart_btn">
-                    <a href="products-detail.html" class="cart">カートに入れる</a>
-                </div>
-            </div><!-- /.item-card --> {% endcomment %}
             {% endfor %}
         </div><!-- /.product-list -->
     </div>
 </div>
 
 {% render 'under_faq' %}
-
-
-{% comment %} <section class="faq">
-    <div class="inner">
-        <div class="title_wrap">
-        <p class="sub scroll"><span>FAQ</span></p>
-        <h2 class="title scroll">よくあるご質問</h2>
-        </div>
-        <ul class="link_item scroll">
-            <li>
-                <a href="faq.html#order_payment" class="link_list">
-                <div class="link_text_wrap">
-                    <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/money_icon.svg" alt="" class="icon">
-                    <p class="link_text">注文・支払いについて</p>
-                </div>
-                <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="faq.html#shipping_cost" class="link_list">
-                <div class="link_text_wrap">
-                    <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/truck_icon.svg" alt="" class="icon">
-                    <p class="link_text">配送・送料について</p>
-                </div>
-                <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg" alt="">
-                </a>
-            </li>
-    
-            <li>
-                <a href="faq.html#return_exchange" class="link_list">
-                <div class="link_text_wrap">
-                    <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/box_icon.svg" alt="" class="icon">
-                    <p class="link_text">返品・交換について</p>
-                </div>
-                <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/arrow.svg" alt="">
-                </a>
-            </li>
-        </ul>
-    </div>
-</section> {% endcomment %}
 
 {% javascript %}
    document.addEventListener('DOMContentLoaded', function() {
@@ -516,7 +188,37 @@
     } else {
         console.error('jQuery is not loaded');
     }
+    // カートに追加ボタンの処理
+    const buttons = document.querySelectorAll('.cart_btn .cart');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            addToCart(productId);
+        });
     });
+    
+    function addToCart(productId) {
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: productId,
+                quantity: 1
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // カートに追加後にカートページに遷移
+            window.location.href = '/cart';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+});
 {% endjavascript %}
 
 {% schema %}
