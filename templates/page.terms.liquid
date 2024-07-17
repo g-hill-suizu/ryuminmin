@@ -1,0 +1,108 @@
+<!-- 固定フィルター -->
+<div class="filter_img obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png" alt=""></div>
+<div class="about_mv">
+    <div class="underpage_title">
+        <p class="u_sub_title">TERMS</p>
+        <h1 class="terms_title obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/terms_ttl.png" alt="特定商取引法に基づく表記"></h1>
+    </div>
+</div>
+<section class="underpage_wrap">
+    <div class="table_text_wrap">
+        <ul class="table_wrap">
+            <li>
+                <p class="heading">販売業者</p>
+                <p class="contents">株式会社 琉珉珉</p>
+            </li>
+            <li>
+                <p class="heading">運営統括責任者</p>
+                <p class="contents">比嘉竜児</p>
+            </li>
+            <li>
+                <p class="heading">所在地</p>
+                <p class="contents">〒901-1207 沖縄県南城市字大里古堅929番地1</p>
+            </li>
+            <li>
+                <p class="heading">TEL</p>
+                <p class="contents">098-875-0178</p>
+            </li>
+            <li>
+                <p class="heading">FAX</p>
+                <p class="contents">098-875-0179</p>
+            </li>
+            <li>
+                <p class="heading">メールアドレス</p>
+                <p class="contents"><span class="change_pink">xxxx@sample.com</span></p>
+            </li>
+            <li>
+                <p class="heading">取扱商品</p>
+                <p class="contents">テキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">販売価格</p>
+                <p class="contents">各商品ページをご参照ください。</p>
+            </li>
+            <li>
+                <p class="heading">商品代金以外の<br>必要料金</p>
+                <p class="contents">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">送料について</p>
+                <p class="contents">テキストテキストテキストテキスト
+                    <br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    <br>テキストテキストテキスト
+                </p>
+            </li>
+            <li>
+                <p class="heading">申し込みの<br class="sp">有効期限</p>
+                <p class="contents">原則、受注確認（受注確認の為の自動送信メール発信）後、10日間とします。</p>
+            </li>
+            <li>
+                <p class="heading">不良品</p>
+                <p class="contents">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">販売数量</p>
+                <p class="contents">テキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">引き渡し時期</p>
+                <p class="contents">テキストテキストテキストテキスト
+                    <br>
+                    <br>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">お支払い方法</p>
+                <p class="contents">クレジット・代引き</p>
+            </li>
+            <li>
+                <p class="heading">返品・交換に<br class="sp">ついて</p>
+                <p class="contents">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% render 'under_faq' %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        $(document).ready(function() {
+            if (typeof jQuery !== 'undefined') {
+                console.log('jQuery is loaded');
+            } else {
+                console.error('jQuery is not loaded');
+            }
+
+            if ($.fn.inview) {
+                console.log('inview is loaded');
+            } else {
+                console.error('inview is not loaded');
+            }
+
+            $('.scroll').on('inview', function () {
+                $(this).addClass('active');
+            });
+        });
+    });
+</script>

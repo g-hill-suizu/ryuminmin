@@ -1,0 +1,74 @@
+<!-- 固定フィルター -->
+<div class="filter_img obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png" alt=""></div>
+<div class="about_mv">
+    <div class="underpage_title">
+        <p class="u_sub_title">COMPANY</p>
+        <h1 class="company_title obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/company_ttl.png" alt="会社概要"></h1>
+    </div>
+</div>
+<section class="underpage_wrap">
+    <div class="table_text_wrap">
+        <ul class="table_wrap">
+            <li>
+                <p class="heading">会社名</p>
+                <p class="contents">会社名</p>
+            </li>
+            <li>
+                <p class="heading">代表者名</p>
+                <p class="contents">比嘉竜児</p>
+            </li>
+            <li>
+                <p class="heading">資本金</p>
+                <p class="contents">X,000万円</p>
+            </li>
+            <li>
+                <p class="heading">事業内容</p>
+                <p class="contents">テキストテキストテキスト</p>
+            </li>
+            <li>
+                <p class="heading">本社所在地</p>
+                <p class="contents">〒901-2131 沖縄県浦添市牧港4丁目25番6号</p>
+            </li>
+            <li>
+                <p class="heading">TEL</p>
+                <p class="contents">098-875-0178</p>
+            </li>
+            <li>
+                <p class="heading">FAX</p>
+                <p class="contents">098-875-0179</p>
+            </li>
+            <li>
+                <p class="heading">営業時間</p>
+                <p class="contents"><span class="change_pink">平日：AM9:00~​PM7:00 / 土・日曜・祝日：AM9:00~​PM7:00</span></p>
+            </li>
+            <li>
+                <p class="heading">定休日</p>
+                <p class="contents"><span class="change_pink">水曜日</span></p>
+            </li>
+        </table>
+    </div>
+</section>
+
+{% render 'under_faq' %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        $(document).ready(function() {
+            if (typeof jQuery !== 'undefined') {
+                console.log('jQuery is loaded');
+            } else {
+                console.error('jQuery is not loaded');
+            }
+
+            if ($.fn.inview) {
+                console.log('inview is loaded');
+            } else {
+                console.error('inview is not loaded');
+            }
+
+            $('.scroll').on('inview', function () {
+                $(this).addClass('active');
+            });
+        });
+    });
+</script>

@@ -8,16 +8,16 @@
 * ------------------------------------------------------------
 */
 {
-  "name": "t:sections.header.name",
-  "type": "header",
   "sections": {
-    "header": {
-      "type": "header",
+    "main": {
+      "type": "main-page",
       "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     }
   },
   "order": [
-    "header"
+    "main"
   ]
 }

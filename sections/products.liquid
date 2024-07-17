@@ -11,7 +11,7 @@
     <div class="inner category_inner">
         <ul class="list_item scroll">
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/ryuminmin/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-ryuminmin.jpg" alt="琉珉珉餃子">
                 </div>
@@ -19,7 +19,7 @@
             </a>
             </li>
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/goya/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-goya.jpg" alt="ゴーヤー餃子">
                 </div>
@@ -28,7 +28,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/mozuku/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-mozuku.jpg" alt="">
                 </div>
@@ -37,7 +37,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/ikasumi/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-ikasumi.jpg" alt="">
                 </div>
@@ -46,7 +46,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/ninniku/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-ninniku.jpg" alt="">
                 </div>
@@ -55,7 +55,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/agu/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-agu.jpg" alt="">
                 </div>
@@ -64,7 +64,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/shimatougarashi/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-tougarashi.jpg" alt="">
                 </div>
@@ -73,7 +73,7 @@
             </li>
 
             <li>
-            <a href="#" class="category_list p_cate_list">
+            <a href="/collections/other/" class="category_list p_cate_list">
                 <div class="card_img obj-fit">
                 <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cate-otameshi.jpg" alt="">
                 </div>
@@ -408,7 +408,10 @@
     </div>
 </div>
 
-<section class="faq">
+{% render 'under_faq' %}
+
+
+{% comment %} <section class="faq">
     <div class="inner">
         <div class="title_wrap">
         <p class="sub scroll"><span>FAQ</span></p>
@@ -445,7 +448,76 @@
             </li>
         </ul>
     </div>
-</section>
+</section> {% endcomment %}
+
+{% javascript %}
+   document.addEventListener('DOMContentLoaded', function() {
+    // ソート
+    let parameters = {};
+    if (location.search.length) {
+        let keyValue = "";
+        let couples = location.search.substr(1).split('&');
+        for (let i = 0; i < couples.length; i++) {
+            keyValue = couples[i].split('=');
+            if (keyValue.length > 1) {
+                parameters[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+            }
+        }
+    }
+    
+    const selectElement = document.querySelector("#SortBy");
+    if (selectElement) {
+        selectElement.addEventListener("change", function(event) {
+            parameters.sort_by = event.target.value;
+            const url = Object.keys(parameters).map(function(key) {
+                return encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key]);
+            }).join('&');
+            location.search = url;
+        });
+    }
+
+    // ハイライト
+    const url = window.location.href;
+    const items = document.querySelectorAll('.thumn-box');
+
+    let targetUrl = '';
+
+    // URLに基づいてターゲットURLを設定
+    if (url.includes('/collections/ryuminmin')) {
+        targetUrl = '/collections/ryuminmin/';
+    } else if (url.includes('/collections/mozuku')) {
+        targetUrl = '/collections/mozuku/';
+    } else if (url.includes('/collections/ikasumi')) {
+        targetUrl = '/collections/ikasumi/';
+    } else if (url.includes('/collections/ninniku')) {
+        targetUrl = '/collections/ninniku/';
+    } else if (url.includes('/collections/agu')) {
+        targetUrl = '/collections/agu/';
+    } else if (url.includes('/collections/shimatougarashi')) {
+        targetUrl = '/collections/shimatougarashi/';
+    } else if (url.includes('/collections/other')) {
+        targetUrl = '/collections/other/';
+    }
+
+    items.forEach(function(item) {
+        const link = item.querySelector('a');
+        if (link && link.getAttribute('href') === targetUrl) {
+            link.classList.add('highlight');
+        }
+    });
+
+    // jQueryの確認と読み込み
+    if (typeof jQuery !== 'undefined') {
+        // jQueryがロードされている場合の処理
+        // https://github.com/protonet/jquery.inview /で対応
+        $('.scroll').on('inview', function () { // .scrollが表示されたら
+            $(this).addClass('active'); // 処理を記述
+        });
+    } else {
+        console.error('jQuery is not loaded');
+    }
+    });
+{% endjavascript %}
 
 {% schema %}
     {

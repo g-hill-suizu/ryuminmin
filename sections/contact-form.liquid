@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+{% comment %} <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -28,12 +28,12 @@
       if settings.animations_reveal_on_scroll
         assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
       endif
-    -%}
+    -%} {% endcomment %}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
           {% render 'icon-success' %}
-          {{ 'templates.contact.form.post_success' | t }}
+          お問い合わせありがとうございました。担当より折り返しご連絡いたします。
         </h2>
       {%- elsif form.errors -%}
         <div class="form__message">
@@ -51,7 +51,45 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
+
+      <table>
+          <tr>
+              <th><label for="form_name">お名前</label></th>
+              <td>
+                  <input type="text" id="form_name" name="contact[お名前]" placeholder="例）山田太郎" required>
+              </td>
+          </tr>
+          <tr>
+              <th><label for="form_kana">ふりがな</label></th>
+              <td>
+                  <input type="text" id="form_kana" name="contact[ふりがな]" placeholder="例）やまだたろう" required>
+              </td>
+          </tr>
+          <tr>
+              <th><label for="form_mail">メールアドレス</label></th>
+              <td>
+                  <input type="email" id="form_mail" name="contact[メールアドレス]" placeholder="例）xxxxxx@sample.com" required>
+              </td>
+          </tr>
+          <tr>
+              <th><label for="form_tel">電話番号</label></th>
+              <td>
+                  <input type="tel" id="form_tel" name="contact[電話番号]" placeholder="例）090-1234-5678" required>
+              </td>
+          </tr>
+          <tr>
+              <th class="textarea"><label for="form_textarea">お問い合わせ内容</label></th>
+              <td class="textarea_wrap">
+                  <textarea name="contact[お問い合わせ内容]" id="form_textarea" placeholder="500字まで"></textarea>
+              </td>
+          </tr>
+      </table>
+      <p><a href="privacy-policy.html">プライバシーポリシー</a>をご確認の上、<br class="sp">「送信」ボタンをクリックしてください。</p>
+      <div class="contact_btn">
+          <button type="submit">送信する</button>
+      </div>     
+
+      {% comment %} <div class="contact__fields">
         <div class="field">
           <input
             class="field__input"
@@ -127,11 +165,11 @@
       <div class="contact__button">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
-        </button>
-      </div>
+        </button> 
+      </div> {% endcomment %}
     {%- endform -%}
-  </div>
-</div>
+  {% comment %} </div>
+</div> {% endcomment %}
 
 {% schema %}
 {

@@ -1,0 +1,56 @@
+<!-- 固定フィルター -->
+<div class="filter_img obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png" alt=""></div>
+<div class="about_mv">
+    <div class="underpage_title">
+        <p class="u_sub_title">CONTACT</p>
+        <h1 class="aboutpage_title obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/contact_ttl.png" alt="お問い合わせ"></h1>
+    </div>
+</div>
+
+<div class="tel_wrap">
+    <div class="tel_text">
+        <p class="grad"><span>TEL</span></p>
+        <p class="tel">お電話から</p>
+    </div>
+    <div class="number_wrap">
+        <a href="tel:0988936896" class="tel_number">
+            <h3 class="namber">098-893-6896</h3>
+        </a>
+    </div>
+</div>
+
+<section class="underpage_wrap">
+    <div class="form_wrap">
+        <div class="title_wrap">
+            <p class="sub"><span>FORM</span></p>
+            <h2 class="title">フォームから</h2>
+        </div>
+
+        {% section 'contact-form' %}
+        
+    </div>
+</section>
+
+{% render 'under_faq' %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        $(document).ready(function() {
+            if (typeof jQuery !== 'undefined') {
+                console.log('jQuery is loaded');
+            } else {
+                console.error('jQuery is not loaded');
+            }
+
+            if ($.fn.inview) {
+                console.log('inview is loaded');
+            } else {
+                console.error('inview is not loaded');
+            }
+
+            $('.scroll').on('inview', function () {
+                $(this).addClass('active');
+            });
+        });
+    });
+</script>

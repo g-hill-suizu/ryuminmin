@@ -1,4 +1,4 @@
-<header class="is_pc pc-fix js-header">
+<header class="is_pc pc-fix js-header underpage_header">
   <div class="header_inner">
     <div class="logo">
       <a href="{{ routes.root_url }}">
@@ -9,14 +9,14 @@
     <div class="header-menu">
       <ul class="menu">
         <li><a href="about.html">琉珉珉について</a></li>
-        <li class="has-child"><a href="products.html">商品一覧</a></li>
+        <li class="has-child"><a href="/collections/all/">商品一覧</a></li>
         <li class="has-child"><a href="faq.html">よくあるご質問</a></li>
         <li class="has-child"><a href="contact.html">お問い合わせ</a></li>
       </ul>
       <div class="header_search-content">
-        <form method="get" action="#">
+        <form method="get" action="#" class="search-form">
           <div class="header_search-inner">
-            <input type="text" name="q" placeholder="キーワードを入力">
+            <input type="text" name="q" placeholder="キーワードを入力" class="search-input">
             <!-- <input type="hidden" name="type" value="product"> -->
             <input type="image" src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/icon-serch.svg" alt="検索" class="icn-search">
           </div>
@@ -70,7 +70,7 @@
       <ul class="sp_menu-list">
         <li><a href="{{ routes.root_url }}">TOP</a></li>
         <li><a href="about.html">琉珉珉について</a></li>
-        <li><a href="products.html">商品一覧</a></li>
+        <li><a href="/collections/all/">商品一覧</a></li>
         <li><a href="faq.html">よくある質問</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
       </ul>
