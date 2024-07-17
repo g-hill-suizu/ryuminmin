@@ -1,0 +1,202 @@
+<!-- 固定フィルター -->
+<div class="filter_img obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png" alt=""></div>
+
+<!-- メインコンテンツ -->
+<section class="p-item_wrap p-top_mv">
+    <div class="p-merchandise-detail">
+        <div class="p-merchandise__img-content">
+            <div class="p-merchandise__img-wrapper">
+                <div class="swiper03">
+                    <div class="swiper-wrapper">
+                        {% for image in product.images %}
+                        <div class="swiper-slide">
+                            <div class="p-img-wrapper">
+                                <img src="{{ image | img_url: 'master' }}" alt="{{ article.title }}">
+                            </div>
+                        </div>
+                        {%- endfor -%}
+                    </div><!-- /.swiper-wrapper -->
+                </div><!-- /.swiper03 -->
+
+                <div class="thumb-list">
+                    {% for image in product.images %}
+                    <div class="thumb-item">
+                        <a class="thumb-link obj-fit" href="javascript:void(0);" onclick="thumbnail({{ forloop.index }})">
+                            <img src="{{ image.src | img_url: 'master' }}" alt="{{ article.title }}">
+                        </a>
+                    </div>
+                    <div class="thumb-item">
+                        <a class="thumb-link" href="javascript:void(0);" onclick="thumbnail(2)">
+                            <img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/products_detail_dammy.jpg" alt="">
+                        </a>
+                    </div>
+                    {%- endfor -%}
+                   
+                </div><!-- /.thumb-list -->
+            </div><!-- /.p-merchandise__img-wrapper -->
+        </div><!-- /.left -->
+        
+        <div class="p-merchandise__detail-content">
+            {% assign current_variant = product.selected_or_first_available_variant %}
+            <p class="cate-name">
+                {% for collection in product.collections %}
+                {% assign excluded_collections = 'all,tax' | split: ',' %}
+                {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                {% endunless %}
+                {% endfor %}
+            </p>
+            <h1 class="c-merchandise__name">{{ product.title }}</h1>
+            {% if product.compare_at_price_max and product.compare_at_price_max > product.price %}
+                <p class="c-price"><span>¥</span>{{ product.compare_at_price_max | money_with_currency }}<span class="tax">(税込)</span></p>
+                <p class="c-price" style="color: #f00;">割引価格：{{ product.price | money_with_currency }}<span class="tax">（税込）</span>
+                </p>
+            {% else %}
+                <p class="c-price">{{ product.price | money_with_currency }}<span class="tax">（税込）</span>
+                </p>
+            {% endif %}
+
+            <div class="p-count">
+                <form action="/cart/add" method="post" id="cart_in">
+                    <input
+                    type="hidden"
+                    name="id"
+                    value="{{ product.variants[0].id }}" />
+                    <div class="count_inner">
+                    <!-- <p class="c-ttl">購入数</p> -->
+                    <div class="product-quantity">
+                        <button type="button" id="minus">ー</button>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" class="spin_erase">
+                        <button type="button" id="plus">＋</button>
+                    </div>
+                    </div>
+                    <div class="p-btn-wrapper">
+                        <button type="button" class="c-btn" data-variant-id="{{ product.variants.first.id }}">カートに入れる</button>
+                    </div>
+                </form>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const buttons = document.querySelectorAll('.recommend_btn .r_list');
+                        
+                        buttons.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const productId = this.getAttribute('data-product-id');
+                                addToCart(productId);
+                            });
+                        });
+                        
+                        function addToCart(productId) {
+                            fetch('/cart/add.js', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    id: productId,
+                                    quantity: 1
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                // カートに追加後にカートページに遷移
+                                window.location.href = '/cart';
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    });
+                </script>
+
+            </div>
+            <div class="p-txt-block">
+                <p class="p-block__text">
+                    {{ product.description | raw }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section><!-- /.p-item_wrap-->
+
+<section class="tab-sec" id="explanation">
+    <div class="underpage_inner">
+        <div class="tab-wrapper" role="tablist">
+            <div class="tab">
+                <input id="tab-a" type="radio" name="tab-radio" role="tab" class="tab-input" value="usage" checked="">
+                <h2 class="tab-label-heading selected"><label class="tab-label a-tab" for="tab-a">商品説明</label></h2>
+            </div>
+            <div class="tab">
+                <input id="tab-b" type="radio" name="tab-radio"  role="tab" class="tab-input" value="type">
+                <h2 class="tab-label-heading"><label class="tab-label b-tab" for="tab-b">商品情報</label></h2>
+            </div>
+        </div>
+        <div class="tab-panel panel-a" role="tabpanel">
+            <div class="content_inner">
+                <p>■琉眠眠餃子
+                    <br>沖縄県産豚を100％使用した肉汁がたっぷりあふれ出す！
+                    <br>豚の赤身と脂のバランスを見定め、そこに新鮮な野菜と独自の調味料とあわせたお子さんでも美味しくいただける餃子です！
+                </p>
+                <p>■ゴーヤー餃子
+                    <br>沖縄産のゴーヤーを使用し、皮にもしぼり汁を練りこんだグリーンで見た目も鮮やかな餃子です。
+                    <br>ビールとの相性も抜群です。
+                </p>
+                <p>■にんにく餃子
+                    <br>琉眠眠餃子に香りのパンチが効いたにんにくを通常の3倍使用！
+                    <br>パワー溢れる元気もりもり餃子です。
+                </p>
+            </div>
+        </div>
+        <div class="tab-panel panel-b" role="tabpanel">
+            <div><p>タブBの中身</p></div>
+        </div>
+    </div>
+</section>
+
+{% javascript %}
+    // スクロールイベントで要素が表示されたらクラスを追加
+    $(document).ready(function () {
+        // https://github.com/protonet/jquery.inview /で対応
+        $('.scroll').on('inview', function () { // .scrollが表示されたら
+            $(this).addClass('active'); // activeクラスを追加
+        });
+
+        // Swiperの初期化
+        const swiper03 = new Swiper(".swiper03", {
+            loop: true, // ループを有効にする
+        });
+
+        // サムネイルクリックでSwiperのスライドを移動
+        window.thumbnail = function (index) {
+            swiper03.slideTo(index);
+        };
+
+        // 数量入力フィールドの増減ボタンのイベントリスナー
+        var quantityInput = document.getElementById('quantity');
+        var minusButton = document.getElementById('minus');
+        var plusButton = document.getElementById('plus');
+
+        minusButton.addEventListener('click', function () {
+            var currentVal = parseInt(quantityInput.value, 10);
+            if (currentVal > 1) {
+                quantityInput.value = currentVal - 1;
+            }
+        });
+
+        plusButton.addEventListener('click', function () {
+            var currentVal = parseInt(quantityInput.value, 10);
+            quantityInput.value = currentVal + 1;
+        });
+    });
+{% endjavascript %}
+
+{% schema %}
+    {
+    "name": "products-detail-top",
+    "presets": [
+    {
+        "name": "products-detail-top"
+    }
+    ]
+}
+{% endschema %}

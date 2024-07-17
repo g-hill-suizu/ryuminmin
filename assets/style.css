@@ -1346,8 +1346,27 @@ recommend
 .recommend .recommend_inner .list_contents .simplebar-track.simplebar-horizontal {
   display: none;
 }
+@media screen and (max-width: 1250px) {
+  .recommend .recommend_inner .list_contents .simplebar-track.simplebar-horizontal {
+    display: block;
+    background: #F9C9A8;
+    border-radius: 5px;
+    width: 100%;
+    height: 6px;
+    margin: 0 auto 0 0;
+  }
+}
 .recommend .recommend_inner .list_contents .simplebar-scrollbar {
   display: none;
+}
+@media screen and (max-width: 1250px) {
+  .recommend .recommend_inner .list_contents .simplebar-scrollbar {
+    display: block;
+    background: #3F3B3A;
+    border-radius: 3px 0 0 3px;
+    height: 6px;
+    top: 0;
+  }
 }
 .recommend .recommend_inner .list_contents .simplebar-placeholder {
   display: none;
