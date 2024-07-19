@@ -4,70 +4,82 @@
             <h2 class="r-title scroll">こちらもおすすめ！</h2>
         </div>
     
-        <div class="list_contents scroll" data-simplebar>
+        <div class="list_contents scroll" data-simplebar data-simplebar-auto-hide="false">
             <ul class="list_area">
-                <li>
-                    <a href="products-detail.html">
-                        <div class="img-box obj-fit"><img src="./images/product_dammy.jpg" alt=""></div>
-                        <p class="cate">カテゴリ名</p>
-                        <p class="item-name">商品名</p>
-                        <p class="price">0,000円(税込)</p>
-                    </a>
-                    <div class="cart_btn">
-                        <a href="products-detail.html" class="cart">カートに入れる</a>
-                    </div>
-                </li>
+                {% for product in collections.all.products limit:5%}
+                    <li>
+                        <a href="{{ product.url }}">
+                            <div class="img_box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+                            <p class="cate"> 
+                                {% for collection in product.collections %}
+                                {% assign excluded_collections = 'all,tax' | split: ',' %}
+                                {% unless excluded_collections contains collection.handle %}
+                                    {{ collection.title }}
+                                {% endunless %}
+                                {% endfor %}
+                            </p>
+                            <p class="item-name">{{ product.title }}</p>
+                            <p class="price">{{ product.price | money }}円(税込)</p>
+                        </a>
+                        <div class="cart_btn">
+                            <button type="button" class="cart" data-product-id="{{ product.variants.first.id }}">               
+                            カートに入れる
+                            </button>
+                        </div>
+                        
+                    </li>
+                {% endfor %}
 
-                <li>
-                    <a href="products-detail.html">
-                        <div class="img-box obj-fit"><img src="./images/product_dammy.jpg" alt=""></div>
-                        <p class="cate">カテゴリ名</p>
-                        <p class="item-name">商品名</p>
-                        <p class="price">0,000円(税込)</p>
-                    </a>
-                    <div class="cart_btn">
-                        <a href="products-detail.html" class="cart">カートに入れる</a>
-                    </div>
-                </li>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const buttons = document.querySelectorAll('.recommend_btn .r_list');
+                        
+                        buttons.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const productId = this.getAttribute('data-product-id');
+                                addToCart(productId);
+                            });
+                        });
+                        
+                        function addToCart(productId) {
+                            fetch('/cart/add.js', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    id: productId,
+                                    quantity: 1
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                // カートに追加後にカートページに遷移
+                                window.location.href = '/cart';
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
 
-                <li>
-                    <a href="products-detail.html">
-                        <div class="img-box obj-fit"><img src="./images/product_dammy.jpg" alt=""></div>
-                        <p class="cate">カテゴリ名</p>
-                        <p class="item-name">商品名</p>
-                        <p class="price">0,000円(税込)</p>
-                    </a>
-                    <div class="cart_btn">
-                        <a href="products-detail.html" class="cart">カートに入れる</a>
-                    </div>
-                </li><!-- /.item-card -->
-
-                <li>
-                    <a href="products-detail.html">
-                        <div class="img-box obj-fit"><img src="./images/product_dammy.jpg" alt=""></div>
-                        <p class="cate">カテゴリ名</p>
-                        <p class="item-name">商品名</p>
-                        <p class="price">0,000円(税込)</p>
-                    </a>
-                    <div class="cart_btn">
-                        <a href="products-detail.html" class="cart">カートに入れる</a>
-                    </div>
-                </li><!-- /.item-card -->
-
-                <li>
-                    <a href="products-detail.html">
-                        <div class="img-box obj-fit"><img src="./images/product_dammy.jpg" alt=""></div>
-                        <p class="cate">カテゴリ名</p>
-                        <p class="item-name">商品名</p>
-                        <p class="price">0,000円(税込)</p>
-                    </a>
-                    <div class="cart_btn">
-                        <a href="products-detail.html" class="cart">カートに入れる</a>
-                    </div>
-                </li><!-- /.item-card -->
+                        // SimpleBarの初期化
+                        new SimpleBar(document.querySelector('.list_contents'), { autoHide: false });
+                    });
+                </script>
             </ul>
         </div>
     </div>
 </section>
 
 {% render 'under_faq' %}
+
+{% schema %}
+    {
+    "name": "products-detail-bottom",
+    "presets": [
+    {
+        "name": "products-detail-bottom"
+    }
+    ]
+}
+{% endschema %}

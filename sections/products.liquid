@@ -101,7 +101,7 @@
         </div><!--p-order-content-->
 
         <div class="p-products_list flex scroll">
-            {% for product in collection.products %}
+            {% for product in collection.all.products %}
             <div class="item-card02">
                 <a href="{{ product.url }}">
                     <div class="img-box obj-fit">

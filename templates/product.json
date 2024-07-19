@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -61,6 +70,7 @@
         "description",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -79,6 +89,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -94,10 +105,39 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "products_detail_top_kExijj": {
+      "type": "products-detail-top",
+      "settings": {
+      }
+    },
+    "172135823856041085": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_YTYc6b": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_YTYc6b"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "products_detail_bottom_PVfKfd": {
+      "type": "products-detail-bottom",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "products_detail_top_kExijj",
+    "172135823856041085",
+    "products_detail_bottom_PVfKfd"
   ]
 }

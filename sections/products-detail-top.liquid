@@ -111,9 +111,7 @@
 
             </div>
             <div class="p-txt-block">
-                <p class="p-block__text">
                     {{ product.description | raw }}
-                </p>
             </div>
         </div>
     </div>
@@ -132,23 +130,16 @@
             </div>
         </div>
         <div class="tab-panel panel-a" role="tabpanel">
-            <div class="content_inner">
-                <p>■琉眠眠餃子
-                    <br>沖縄県産豚を100％使用した肉汁がたっぷりあふれ出す！
-                    <br>豚の赤身と脂のバランスを見定め、そこに新鮮な野菜と独自の調味料とあわせたお子さんでも美味しくいただける餃子です！
-                </p>
-                <p>■ゴーヤー餃子
-                    <br>沖縄産のゴーヤーを使用し、皮にもしぼり汁を練りこんだグリーンで見た目も鮮やかな餃子です。
-                    <br>ビールとの相性も抜群です。
-                </p>
-                <p>■にんにく餃子
-                    <br>琉眠眠餃子に香りのパンチが効いたにんにくを通常の3倍使用！
-                    <br>パワー溢れる元気もりもり餃子です。
-                </p>
-            </div>
+            <!-- 商品説明のメタフィールド表示 -->
+            {% if product.metafields.custom.product_description %}
+            <div class="content_inner" id="product-description" data-content="{{ product.metafields.custom.product_description | escape }}"></div> 
+            {% endif %}
         </div>
         <div class="tab-panel panel-b" role="tabpanel">
-            <div><p>タブBの中身</p></div>
+            <!-- 商品情報のメタフィールド表示 -->
+            {% if product.metafields.custom.product_info %}
+                <div class="content_inner" id="product-info" data-content="{{ product.metafields.custom.product_info | escape }}"></div>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -187,6 +178,32 @@
             var currentVal = parseInt(quantityInput.value, 10);
             quantityInput.value = currentVal + 1;
         });
+
+        // メタフィールドのリッチテキストをHTMLに変換して表示
+        function renderContent(elementId) {
+            var element = document.getElementById(elementId);
+            if (element) {
+                var data = JSON.parse(element.getAttribute("data-content"));
+                var html = '';
+                if (data.type === "root" && data.children) {
+                data.children.forEach(function(child) {
+                    if (child.type === "paragraph" && child.children) {
+                    html += "<p>";
+                    child.children.forEach(function(grandchild) {
+                        if (grandchild.type === "text") {
+                        html += grandchild.value;
+                        }
+                    });
+                    html += "</p>";
+                    }
+                });
+                }
+                element.innerHTML = html;
+            }
+        }
+
+        renderContent("product-description");
+        renderContent("product-info");
     });
 {% endjavascript %}
 

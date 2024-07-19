@@ -261,6 +261,7 @@
         }
         body {
           display: grid;
+          color: #000101;
           grid-template-rows: auto auto 1fr auto;
           grid-template-columns: 100%;
           min-height: 100%;
@@ -340,6 +341,10 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% if template.name == 'cart' or template.name == 'search' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
+        <!-- 固定フィルター -->
+        <div class="filter_img obj-fit"><img src="https://cdn.shopify.com/s/files/1/0669/5790/1973/files/bg_fixd.png" alt=""></div>
+        {% endif %}
       {{ content_for_layout }}
     </main>
 

@@ -13,7 +13,7 @@ html {
 body {
   scroll-behavior: smooth;
   font-family: "Zen Old Mincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-  color: #000101;
+  color: #000101 !important;
   line-height: 1.7;
   letter-spacing: 0.17em;
 }
@@ -281,14 +281,17 @@ header .header_search-inner {
   display: inline-flex;
   align-items: center;
   width: 20.6rem;
+  /* 検索入力フィールドのフォーカス時のスタイルをリセット */
+  /* 検索ボタンのフォーカス時のスタイルをリセット */
 }
 header .header_search-inner input[type=text] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
+  background-color: transparent;
   border: none;
   border-radius: 0;
+  outline: none;
   font: inherit;
   outline: none;
   width: 100%;
@@ -299,8 +302,7 @@ header .header_search-inner input[type=text] {
   flex-grow: 1;
   line-height: normal;
   font-size: 1.4rem;
-  padding: 1rem;
-  padding-left: 1.9rem;
+  margin: 1rem 1rem 1rem 1.9rem;
 }
 header .header_search-inner input[type=text]::-moz-placeholder {
   color: #000101;
@@ -321,6 +323,19 @@ header .header_search-inner .icn-search {
   box-sizing: content-box;
   height: 100%;
   padding-right: 1.2rem;
+  outline: none;
+  border: none;
+}
+header .header_search-inner .search-input:focus {
+  outline: none; /* フォーカス時のアウトラインを消す */
+  border: none; /* フォーカス時の枠線を消す */
+  box-shadow: none; /* ボックスシャドウを消す */
+  background-color: transparent; /* 背景色を透明にする */
+}
+header .header_search-inner .icn-search:focus {
+  outline: none; /* フォーカス時のアウトラインを消す */
+  border: none; /* フォーカス時の枠線を消す */
+  box-shadow: none; /* ボックスシャドウを消す */
 }
 header .header_icon_login,
 header .header_icon_cart {
@@ -1282,6 +1297,8 @@ recommend
 .recommend .recommend_inner {
   padding-top: 8rem;
   padding-bottom: 15.9722222222vw;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 .recommend .recommend_inner .title_wrap {
   text-align: center;
@@ -1318,19 +1335,15 @@ recommend
 }
 .recommend .recommend_inner .list_contents {
   padding-top: 6rem;
+  margin: 0 auto;
+  /* デフォルトのスクロールバーを消す */
+  /* SimpleBarのスクロールバーのスタイルをカスタマイズ */
 }
 @media screen and (max-width: 1250px) {
   .recommend .recommend_inner .list_contents {
     white-space: nowrap;
     padding-bottom: 4rem;
-    width: auto;
-    transform: translateX(-4rem);
-    margin-left: 2rem;
-    margin-bottom: 6rem;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none; /* IE、Edgeでスクロールバーを非表示 */
-    scrollbar-width: none; /* Firefoxでスクロールバーを非表示 */
+    margin: 0; /* 左右の余白を削除 */
   }
 }
 @media screen and (max-width: 599px) {
@@ -1342,6 +1355,11 @@ recommend
 }
 .recommend .recommend_inner .list_contents::-webkit-scrollbar {
   display: none;
+}
+.recommend .recommend_inner .list_contents .simplebar-content {
+  width: calc(100% + 40px) !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .recommend .recommend_inner .list_contents .simplebar-track.simplebar-horizontal {
   display: none;
@@ -1378,6 +1396,20 @@ recommend
     width: 100% !important; /* 幅を100%に設定 */
   }
 }
+.recommend .recommend_inner .list_contents .simplebar-content-wrapper {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE、Edgeでスクロールバーを非表示 */
+  scrollbar-width: none; /* Firefoxでスクロールバーを非表示 */
+}
+.recommend .recommend_inner .list_contents .simplebar-content-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.recommend .recommend_inner .list_contents .simplebar-scrollbar::before {
+  background: transparent; /* スクロールバーの背景を透明にする */
+}
+.recommend .recommend_inner .list_contents .simplebar-track.simplebar-vertical {
+  display: none; /* 垂直スクロールバーを非表示にする */
+}
 .recommend .recommend_inner .list_contents .list_area {
   display: flex;
   flex-wrap: wrap;
@@ -1388,6 +1420,8 @@ recommend
   .recommend .recommend_inner .list_contents .list_area {
     flex-wrap: nowrap;
     gap: 3rem;
+    justify-content: flex-start;
+    padding: 0 2rem;
   }
 }
 .recommend .recommend_inner .list_contents .list_area li {
@@ -1396,6 +1430,8 @@ recommend
 }
 @media screen and (max-width: 1250px) {
   .recommend .recommend_inner .list_contents .list_area li {
+    flex: 0 0 auto;
+    margin: 0;
     margin-bottom: 4rem;
   }
 }
@@ -1486,6 +1522,12 @@ recommend
 }
 .recommend .recommend_inner .list_contents .list_area li .recommend_btn .r_list:hover .cls-1 {
   fill: #fff;
+}
+.recommend .recommend_inner .list_contents .list_area li:first-child {
+  margin-left: 2rem;
+}
+.recommend .recommend_inner .list_contents .list_area li:last-child {
+  margin-right: 2rem !important;
 }
 
 .list_contents::-webkit-scrollbar {
@@ -4675,6 +4717,9 @@ products
   position: relative;
   text-align: center;
   transition: all 0.2s;
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-align: center;
 }
 .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn:hover {
   background: #E5CC79;
@@ -4685,7 +4730,7 @@ products
     height: 3.6rem;
   }
 }
-.categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn::after {
+.categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn::before {
   position: absolute;
   content: "";
   background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_red.svg) no-repeat center/cover;
@@ -4696,21 +4741,19 @@ products
   left: 3rem;
 }
 @media screen and (max-width: 1250px) {
-  .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn::after {
+  .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn::before {
     width: 2rem;
     height: 2rem;
     left: 2rem;
   }
 }
-.categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn:hover::after {
+.categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn:hover::before {
   background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_white.svg) no-repeat center/cover;
 }
 .categorypage_wrap .underpage_inner .p-products_list .item-card02 .cart_btn .cart {
   padding: 0.6rem 0 0.6rem 2rem;
   display: block;
   width: 100%;
-  font-weight: 500;
-  font-size: 1.6rem;
   letter-spacing: 0;
 }
 @media screen and (max-width: 599px) {
@@ -4846,7 +4889,7 @@ products-detail
     padding-top: 3.6rem;
   }
 }
-.p-txt-block .p-block__text {
+.p-txt-block p {
   font-size: 1.5rem;
   line-height: 2;
   font-weight: 700;
@@ -4854,7 +4897,7 @@ products-detail
   color: #fff;
 }
 @media screen and (max-width: 599px) {
-  .p-txt-block .p-block__text {
+  .p-txt-block p {
     font-size: 1.3rem;
   }
 }
@@ -4973,7 +5016,11 @@ products-detail
   align-items: center;
   margin-bottom: 3.5rem;
 }
-.p-merchandise__detail-content .c-btn {
+.p-merchandise__detail-content .p-btn-wrapper {
+  max-width: 41.3rem;
+  min-height: 50px;
+}
+.p-merchandise__detail-content .p-btn-wrapper .c-btn {
   position: relative;
   font: inherit;
   font-size: 18px;
@@ -4983,16 +5030,15 @@ products-detail
   border-radius: 999rem;
   color: #fff;
   min-height: 50px;
-  display: grid;
-  place-content: center;
   outline: none;
-  width: 71%;
-  padding-left: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 8rem;
   cursor: pointer;
   transition: all 0.3s;
   margin-bottom: 1.6rem;
 }
-.p-merchandise__detail-content .c-btn::before {
+.p-merchandise__detail-content .p-btn-wrapper .c-btn::before {
   position: absolute;
   content: "";
   background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_detail.svg) no-repeat center/cover;
@@ -5000,27 +5046,37 @@ products-detail
   height: 2.3rem;
   top: 50%;
   transform: translateY(-50%);
-  left: 11.5rem;
+  left: 11rem;
+}
+@media screen and (max-width: 1100px) {
+  .p-merchandise__detail-content .p-btn-wrapper .c-btn::before {
+    left: 8rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .p-merchandise__detail-content .p-btn-wrapper .c-btn::before {
+    left: 11rem;
+  }
 }
 @media screen and (max-width: 599px) {
-  .p-merchandise__detail-content .c-btn::before {
+  .p-merchandise__detail-content .p-btn-wrapper .c-btn::before {
     left: 8rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .p-merchandise__detail-content .c-btn {
+  .p-merchandise__detail-content .p-btn-wrapper .c-btn {
     font-size: 1.5rem;
     min-height: 6rem;
     width: 100%;
     min-height: 46px;
   }
 }
-.p-merchandise__detail-content .c-btn:hover {
+.p-merchandise__detail-content .p-btn-wrapper .c-btn:hover {
   background: #fff;
   color: #B00000;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
-.p-merchandise__detail-content .c-btn:hover::before {
+.p-merchandise__detail-content .p-btn-wrapper .c-btn:hover::before {
   background: url(https://cdn.shopify.com/s/files/1/0669/5790/1973/files/cart_icon_red.svg) no-repeat center/cover;
 }
 .p-merchandise__detail-content .product-quantity {
@@ -5142,19 +5198,19 @@ products-detail
 }
 .tab-sec .panel-a {
   background-color: #fff;
-  height: 50rem;
+  height: auto;
   width: 100%;
 }
 .tab-sec .panel-b {
   background-color: #d5d5d5;
-  height: 170px;
+  height: auto;
   width: 100%;
 }
 .tab-sec .tab-panel > div {
   height: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding-top: 4.6rem;
+  padding: 4.6rem;
 }
 @media screen and (max-width: 1250px) {
   .tab-sec .tab-panel > div {
@@ -5165,17 +5221,69 @@ products-detail
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2;
-  padding-bottom: 3.5rem;
+  padding-bottom: 2rem;
 }
 @media screen and (max-width: 599px) {
   .tab-sec .tab-panel > div p {
     font-size: 1.3rem;
-    padding-bottom: 2.4rem;
   }
 }
 .tab-sec .panel-b,
 .tab-sec .panel-c {
   display: none;
+}
+
+#shopify-block-judge_me_reviews_review_widget_F7DVtM {
+  position: relative;
+}
+
+.jdgm-form input[type=text],
+.jdgm-form input[type=email],
+.jdgm-form input[type=url],
+.jdgm-form textarea {
+  background-color: #fff;
+}
+
+.jdgm-form__fieldset.jdgm-form__fieldset-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .jdgm-form__fieldset.jdgm-form__fieldset-actions {
+    flex-direction: column;
+  }
+}
+
+.jdgm-write-rev-link.jdgm-write-rev-link {
+  background-color: #000101 !important;
+  border: 2px solid #000101 !important;
+  border-color: #000101 !important;
+}
+
+.jdgm-rev-widg__summary .jdgm-star {
+  color: #000101 !important;
+}
+
+.jdgm-rev-widg .jdgm-star {
+  color: #000101 !important;
+}
+
+.jdgm-btn--solid, input[type=submit].jdgm-btn--solid {
+  background-color: #000101 !important;
+  border: 2px solid #000101 !important;
+  border-color: #000101;
+}
+
+.jdgm-btn--border:not([disabled]):hover, .jdgm-btn--border:focus {
+  color: #000101;
+}
+
+.jdgm-btn--border {
+  color: #000101 !important;
+  border: 2px solid #000101 !important;
+  border-color: #000101 !important;
 }
 
 .p-recommend {
@@ -5221,15 +5329,15 @@ products-detail
 }
 .p-recommend .underpage_inner .list_contents {
   padding-top: 6rem;
+  /* デフォルトのスクロールバーを消す */
+  /* SimpleBarのスクロールバーのスタイルをカスタマイズ */
 }
 @media screen and (max-width: 1250px) {
   .p-recommend .underpage_inner .list_contents {
     white-space: nowrap;
     padding-bottom: 4rem;
-    width: 100%;
     transform: translateX(-4rem);
-    margin-left: 2rem;
-    margin-bottom: 6rem;
+    margin: 0 2rem 6rem 2rem;
   }
 }
 @media screen and (max-width: 599px) {
@@ -5248,7 +5356,7 @@ products-detail
     display: block;
     background: #F9C9A8;
     border-radius: 5px;
-    width: 96%;
+    width: 100%;
     height: 6px;
     margin: 0 auto 0 0;
   }
@@ -5264,6 +5372,27 @@ products-detail
     height: 6px;
     top: 0;
   }
+}
+.p-recommend .underpage_inner .list_contents .simplebar-placeholder {
+  height: 0 !important;
+}
+.p-recommend .underpage_inner .list_contents .simplebar-content {
+  padding: 0 !important;
+  margin-bottom: 4rem;
+}
+.p-recommend .underpage_inner .list_contents .simplebar-content-wrapper {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE、Edgeでスクロールバーを非表示 */
+  scrollbar-width: none; /* Firefoxでスクロールバーを非表示 */
+}
+.p-recommend .underpage_inner .list_contents .simplebar-content-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.p-recommend .underpage_inner .list_contents .simplebar-scrollbar::before {
+  background: transparent; /* スクロールバーの背景を透明にする */
+}
+.p-recommend .underpage_inner .list_contents .simplebar-track.simplebar-vertical {
+  display: none; /* 垂直スクロールバーを非表示にする */
 }
 .p-recommend .underpage_inner .list_contents .list_area {
   display: flex;
@@ -5283,7 +5412,7 @@ products-detail
 @media screen and (max-width: 1250px) {
   .p-recommend .underpage_inner .list_contents .list_area li {
     width: 100vw;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 @media screen and (max-width: 599px) {
@@ -5293,6 +5422,7 @@ products-detail
 }
 .p-recommend .underpage_inner .list_contents .list_area li .img_box {
   width: 22rem;
+  height: 20.7rem;
   margin-bottom: 10px;
   border-radius: 5px;
   overflow: hidden;
@@ -5370,16 +5500,11 @@ products-detail
   transform: translateY(-50%);
   left: 3rem;
 }
-.p-recommend .underpage_inner .list_contents .list_area li .cart_btn a {
+.p-recommend .underpage_inner .list_contents .list_area li .cart_btn .cart {
   padding: 0.6rem 3rem 0.6rem 6.5rem;
   display: inline-block;
   font-weight: 500;
   font-size: 1.6rem;
-  letter-spacing: 0.17rem;
-}
-.p-recommend .underpage_inner .list_contents .list_area li .cart_btn a .btn_arrow {
-  width: 3.3rem;
-  margin-left: 2rem;
 }
 
 /**
