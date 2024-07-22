@@ -533,5 +533,10 @@
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
     }
+  },
+  "shopify": {
+    "challenge": {
+      "submit_button_text": "送信する"
+    }
   }
 }

@@ -175,9 +175,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   grid-auto-flow: column;
 }
 
-.page-margin,
-.shopify-challenge__container {
+.page-margin{
   margin: 7rem auto;
+}
+
+.shopify-challenge__container {
+  margin: 20rem auto !important;
 }
 
 .rte-width {
@@ -258,7 +261,8 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: var(--font-heading-family);
+  /* font-family: var(--font-heading-family); */
+  font-family: "Zen Old Mincho",'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
@@ -331,7 +335,9 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
+  /* font-family: var(--font-heading-family); */
+  font-family: "Zen Old Mincho",'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  font-style: var(--font-heading-style);
   font-style: var(--font-heading-style);
   font-size: calc(var(--font-heading-scale) * 1.5rem);
 }
