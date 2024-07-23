@@ -5528,15 +5528,13 @@ products-detail
     white-space: nowrap;
     padding-bottom: 4rem;
     transform: translateX(-4rem);
-    margin: 0 0 6rem 2rem;
+    margin: 0 1rem 6rem 3rem;
   }
 }
 @media screen and (max-width: 599px) {
   .p-recommend .underpage_inner .list_contents {
-    padding-top: 1rem;
     padding-bottom: 2rem;
     transform: translateX(-2rem);
-    margin-bottom: 3rem;
   }
 }
 .p-recommend .underpage_inner .list_contents .simplebar-track.simplebar-horizontal {
