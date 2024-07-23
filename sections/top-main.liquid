@@ -672,10 +672,10 @@
         $(this).addClass('active'); // activeクラスを追加
         });
 
-        //simplebar常に表示
-        const simpleBar = new SimpleBar(document.querySelector('body'), {
-        autoHide: false //スクロールバーを常に表示
-        });
+        const listItems = document.querySelectorAll('.list_area li');
+        if (listItems.length > 0) {
+            listItems[listItems.length - 1].classList.add('last-item');
+        }
     });
 {% endjavascript %}
 
