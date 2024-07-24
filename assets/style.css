@@ -770,6 +770,10 @@ footer .inner .footer_wrap .footer_right .menu-right li .official {
   display: flex;
   align-items: center;
 }
+footer .inner .footer_wrap .footer_right .menu-right li .official img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
 footer .inner .footer_wrap .footer_right .menu-right li:last-child {
   padding-bottom: 0;
 }
@@ -851,6 +855,10 @@ footer .inner .sp_footer_wrap .footer_nav .nav_right li .cart {
 footer .inner .sp_footer_wrap .footer_nav .nav_right li .official {
   display: flex;
   align-items: center;
+}
+footer .inner .sp_footer_wrap .footer_nav .nav_right li .official img {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 footer .inner .sp_footer_wrap .footer_nav .nav_right li:last-child {
   padding-bottom: 0;
