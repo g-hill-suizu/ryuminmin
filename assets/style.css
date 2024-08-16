@@ -605,11 +605,19 @@ spメニューレイアウト
   height: 100%;
   overflow-y: scroll;
 }
+.open_active .sp_header_inner {
+  flex-direction: column;
+}
 .open_active .sp_header_inner .logo {
   display: none !important;
 }
 .open_active .sp_header_inner .menu_wrap {
-  display: none;
+  z-index: 1000;
+}
+.open_active .sp_header_inner .menu_wrap .header_sp_search-content img,
+.open_active .sp_header_inner .menu_wrap .header_sp_icon_login img,
+.open_active .sp_header_inner .menu_wrap .header_sp_icon_cart img {
+  filter: brightness(0) invert(1);
 }
 .open_active .sp_header_inner .ham_active {
   background-color: #fff;
@@ -632,10 +640,10 @@ spメニューレイアウト
   pointer-events: auto;
   display: block;
   opacity: 1;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   overflow-y: scroll;
-  padding: 6rem 13% 4rem;
+  padding-top: 4rem;
   margin: 0 auto;
 }
 .open_active .sp_header_inner a {
