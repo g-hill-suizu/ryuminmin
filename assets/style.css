@@ -5537,6 +5537,7 @@ products-detail
   }
 }
 .p-recommend .underpage_inner .list_contents {
+  white-space: nowrap;
   /* デフォルトのスクロールバーを消す */
 }
 @media screen and (max-width: 1250px) {
@@ -5605,7 +5606,7 @@ products-detail
 }
 .p-recommend .underpage_inner .list_contents .list_area {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 35px;
   justify-content: space-between;
 }
