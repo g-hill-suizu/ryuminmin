@@ -3412,8 +3412,6 @@ about
 .how-to-bake {
   z-index: 2;
   position: relative;
-  padding-top: 10rem;
-  margin-top: -10rem;
 }
 .how-to-bake .bake_inner {
   max-width: 1226px;
