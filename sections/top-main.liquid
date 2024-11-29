@@ -111,7 +111,7 @@
         <ul class="list_area">
             {% for product in collections.all.products limit:5%}
                 <li>
-                    <a href="{{ product.url }}">
+                    <a href="{{ product.url }}#list">
                         <div class="img_box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
                         <p> 
                             {% for collection in product.collections %}
