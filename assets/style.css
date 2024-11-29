@@ -7,11 +7,12 @@ common-style
 }
 
 html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
   font-size: 62.5%;
 }
 
 body {
-  scroll-behavior: smooth;
   font-family: "Zen Old Mincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
   color: #000101 !important;
   line-height: 1.7;
@@ -1486,6 +1487,8 @@ recommend
   font-weight: 500;
   letter-spacing: 0.17em;
   color: #B00000;
+  word-wrap: break-word; /* 長い単語を折り返し可能にする */
+  white-space: normal; /* テキストを通常の折り返しにする */
 }
 @media screen and (max-width: 599px) {
   .recommend .recommend_inner .list_contents .list_area li p {
@@ -3946,19 +3949,6 @@ faq
   z-index: 2;
   max-width: 1240px;
   margin: 0 auto;
-}
-.faqpage_wrap:before {
-  content: "";
-  display: block;
-  height: 12.5rem;
-  margin-top: -12.5rem;
-  visibility: hidden;
-}
-@media screen and (max-width: 599px) {
-  .faqpage_wrap:before {
-    height: 12rem;
-    margin-top: -12rem;
-  }
 }
 .faqpage_wrap .faq_wrap {
   padding: 6.5rem 2rem 10rem 2rem;
